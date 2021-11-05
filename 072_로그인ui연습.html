@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>로그인UI 연습</title>
+    <link rel="stylesheet" href="reset.css" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      a {
+        text-decoration: none;
+      }
+      .account {
+        width: 350px;
+        height: 135px;
+        background-color: #f8f9fb;
+        padding: 16px 0px;
+        margin: 20px;
+      }
+      .login_message {
+        margin-left: 20px;
+        font-size: 12px;
+        color: #959aa0;
+      }
+      .login {
+        width: 305px;
+        height: 48px;
+        background-color: #18ce60;
+        padding: 0px 15px;
+        margin-top: 10px;
+        margin-left: 20px;
+      }
+      .logo {
+        width: 60px;
+      }
+
+      .bottom-row {
+        margin: 30px 18px 0px 8px;
+      }
+      .user-looking a {
+        color: #6d6f6e;
+      }
+      .sign-in {
+        color: #6d6f6e;
+      }
+      .user-looking a {
+        float: left;
+      }
+      .id::before {
+        content: "";
+        display: block;
+      }
+      .sign-in {
+        float: right;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="account">
+      <p class="login_message">네이버를 더 안전하고 편리하게 이용하세요</p>
+      <a href="#" class="login">
+        <img class="logo" src="image/title.png" alt="네이버" />
+        로그인
+      </a>
+      <div class="bottom-row">
+        <div class="user-looking">
+          <a href="#" class="id"> 아이디 </a>
+          <a href="#" class="pw">비밀번호 찾기</a>
+        </div>
+        <a href="#" class="sign-in">회원가입</a>
+      </div>
+    </div>
+  </body>
+</html>
