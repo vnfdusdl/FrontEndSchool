@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        /* float을 해제하는 여러가지 방법들 */
+
+
+      /* clear-fix -> 이걸 통해서 부모의 높이가 다시 생김*/
+      ul::after {
+        display: block;
+        content: "";
+        clear: both;
+      }
+
+      li {
+        float: left;
+        width: 300px;
+        height: 100px;
+        background: pink;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </body>
+</html>
