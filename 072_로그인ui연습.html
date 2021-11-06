@@ -20,41 +20,95 @@
         padding: 16px 0px;
         margin: 20px;
       }
+      /* user-looking과 sign-in의 float 해제 */
+      .account::after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+
       .login_message {
         margin-left: 20px;
         font-size: 12px;
         color: #959aa0;
       }
+
       .login {
+        /* a 태그는 inline 요소니까, width 주기 위해서는 display:block; 주는 거!! */
+        display: block;
         width: 305px;
         height: 48px;
         background-color: #18ce60;
-        padding: 0px 15px;
-        margin-top: 10px;
+        margin-top: 12px;
         margin-left: 20px;
-      }
-      .logo {
-        width: 60px;
+        padding: 16px 0;
+        /* img도 text처럼 읽혀서 text-align하면 조절할 수 있다. */
+        text-align: center;
+        font-size: 14px;
+        font-weight: 700;
+        color: white;
+        border-radius: 2px;
       }
 
-      .bottom-row {
-        margin: 30px 18px 0px 8px;
+      .logo {
+        width: 60px;
+        vertical-align: top;
+        margin-top: 1px;
       }
+
+      .user-looking {
+        float: left;
+        margin: 18px 0 0 18px;
+        font-size: 13px;
+      }
+
       .user-looking a {
         color: #6d6f6e;
       }
       .sign-in {
         color: #6d6f6e;
       }
-      .user-looking a {
-        float: left;
-      }
+
+      /* 아이디 옆에 자물쇠 */
       .id::before {
         content: "";
         display: block;
+        width: 15px;
+        height: 15px;
+        background-image: url(image/lock.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        float: left;
+        margin: 0px 3px 2px 1px;
+      }
+
+      /* 아이디와 비밀번호찾기사이에 점 */
+      .pw::before {
+        content: "";
+        /* block으로 해버리면 옆에 텍스트가 밑으로 내려감 */
+        display: inline-block;
+        width: 3px;
+        height: 3px;
+        border-radius: 50%;
+        background-color: #d8dde0;
+        margin: 0px 5px 5px 1px;
       }
       .sign-in {
         float: right;
+        font-size: 13px;
+        margin: 18px 25px 0 0;
+      }
+      /* 회원가입 옆에 사람모양 */
+      .sign-in::before {
+        content: "";
+        display: block;
+        width: 12px;
+        height: 12px;
+        float: left;
+        background-image: url(image/user.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin-right: 5px;
       }
     </style>
   </head>
@@ -65,13 +119,11 @@
         <img class="logo" src="image/title.png" alt="네이버" />
         로그인
       </a>
-      <div class="bottom-row">
-        <div class="user-looking">
-          <a href="#" class="id"> 아이디 </a>
-          <a href="#" class="pw">비밀번호 찾기</a>
-        </div>
-        <a href="#" class="sign-in">회원가입</a>
+      <div class="user-looking">
+        <a href="#" class="id"> 아이디 </a>
+        <a href="#" class="pw">비밀번호 찾기</a>
       </div>
+      <a href="#" class="sign-in">회원가입</a>
     </div>
   </body>
 </html>
