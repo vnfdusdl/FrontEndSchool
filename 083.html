@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        ul {
+            height: 100vh;
+            display: flex;
+            /* align-items: flex-end; */
+        }
+        li {
+            width: 50px;
+            height: 50px;
+            background-color: palevioletred;
+            border: 1px solid black;
+        }
+        .first {
+            order:5;
+        }
+        .second {
+            order:3;
+        }
+        .third {
+            order: 4;
+        }
+        .fourth {
+            order: 1;
+        }
+        .fifth {
+            align-self: center;
+            order: 2;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li class="first">1</li>
+        <li class="second">2</li>
+        <li class="third">3</li>
+        <li class="fourth">4</li>
+        <li class="fifth">5</li>
+        
+    </ul>
+</body>
+</html>
