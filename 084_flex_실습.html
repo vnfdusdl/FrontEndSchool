@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <style>
+        .login {
+            display: block;
+            width: 305px;
+            height: 48px;
+            background-color: #18ce60;
+            margin-top: 12px;
+            margin-left: 20px;
+            padding: 16px 0;
+            /* img도 text처럼 읽혀서 text-align하면 조절할 수 있다. */
+            text-align: center;
+            font-size: 14px;
+            font-weight: 700;
+            color: white;
+            border-radius: 2px;
+        }
+        
+        .id::before {
+            content: "";
+            display: block;
+            width: 15px;
+            height: 15px;
+            background-image: url(image/lock.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            float: left;
+            margin: 0px 3px 2px 1px;
+        }
+        .pw::before {
+            content: "";
+            /* block으로 해버리면 옆에 텍스트가 밑으로 내려감 */
+            display: inline-block;
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            background-color: #d8dde0;
+            margin: 0px 5px 5px 1px;
+        }
+        .sign-in::before {
+            content: "";
+            display: block;
+            width: 12px;
+            height: 12px;
+            float: left;
+            background-image: url(image/user.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            margin-right: 5px;
+        }
+        </style>
+
+    </title>
+</head>
+<body>
+    <div class="account">
+        <p class="login_message">네이버를 더 안전하고 편리하게 이용하세요</p>
+        <a href="#" class="login">
+          <img class="logo" src="image/title.png" alt="네이버" />
+          로그인
+        </a>
+        <div class="user-looking">
+          <a href="#" class="id"> 아이디 </a>
+          <a href="#" class="pw">비밀번호 찾기</a>
+        </div>
+        <a href="#" class="sign-in">회원가입</a>
+</body>
+</html>

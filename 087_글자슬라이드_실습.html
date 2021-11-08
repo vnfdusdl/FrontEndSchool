@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>글자 슬라이드</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* animation */
+      @keyframes 움직여 {
+        0% {
+          transform: translate(0px, 0px);
+        }
+        50% {
+          transform: translate(100px, 0px);
+        }
+        100% {
+          transform: translate(100px, 100px);
+        }
+      }
+
+      @keyframes rolling {
+        0% {
+          transform: translateY(0);
+        }
+        25% {
+          /* 위로 20%만큼 올라가랏 */
+          transform: translateY(-20%);
+        }
+        50% {
+          transform: translateY(-40%);
+        }
+        75% {
+          transform: translateY(-60%);
+        }
+        100% {
+          transform: translateY(-80%);
+        }
+      }
+      /* reset */
+      body,
+      h1,
+      h2,
+      ul,
+      li {
+        margin: 0;
+        padding: 0;
+      }
+
+      li {
+        list-style-type: none;
+      }
+
+      /* style */
+        body {
+        background-color: #000;
+        font-family: "Pacifico", cursive;
+      }
+
+        .name {
+        text-align: center;
+        margin: 100px;
+        font-size: 50px;
+        color: whitesmoke;
+        width: 500px;
+        height: 320px;
+        background-color: pink;
+        /* animation: 움직여 2s; */
+      }
+
+      .name-job {
+        position: relative;
+        height: 100px;
+        line-height: 100px;
+        overflow: hidden;
+      }
+      /* 위아래의 살짝의 블러 효과 */
+      .name-job::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        box-shadow: inset 0 0 10px 10px pink;
+    }
+
+      .name-job-list {
+        animation: rolling 4s ease-in-out infinite;
+        margin-top: 10px;
+      }
+
+      .name-title {
+        color: tomato;
+        margin-top: -10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="name">
+      Everybody loves
+      <div class="name-job">
+        <ul class="name-job-list">
+          <li>cute</li>
+          <li>charmimg</li>
+          <li>smart</li>
+          <li>considerate</li>
+          <li>cute</li>
+        </ul>
+      </div>
+      <h2 class="name-title">Choyoen❤</h2>
+    </div>
+  </body>
+</html>
