@@ -1,49 +1,67 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>양면 다르게 돌리기</title>
     <style>
-        .cont-box {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            /* height: 500px; */
-        }
+      body {
+        padding: 100px;
+      }
 
-        .cont-box:hover .item-box {
-            width: 500px;
-            height: 500px;
-            transform: rotateY(0deg) ;
-        }
-        .cont-box .item-box {
-            width: 100px;
-            height: 100px;
-            transition: all 1s;
-        }
+      .cont-box {
+        /* display: flex;
+        justify-content: center;
+        align-items: center; */
+        width: 100px;
+        height: 100px;
+        perspective: 800px;
+      }
 
-        .cont-box .item-box.one {
-            background-color: palevioletred;
-            transform: rotateY(-720deg);
-            position: absolute;
-        }
+      .cont-box .item-box {
+        width: 100px;
+        height: 100px;
+        transition: all 1s;
+        backface-visibility: hidden;
+      }
 
-        .cont-box .item-box.two {
-            background-color: peru;
-            transform: rotateY(720deg);
-            position: absolute;
-        }
+      .cont-box .item-box.one {
+        background-color: palevioletred;
+        transform: rotateY(0deg);
+        position: absolute;
+      }
 
+      .cont-box:hover .item-box.one {
+        transform: rotateY(540deg);
+        width: 500px;
+        height: 500px;
+      }
+
+      .cont-box .item-box.two {
+        background-color: salmon;
+        transform: rotateY(-180deg);
+        text-align: center;
+        /* 세로축 가운데 정렬 */
+        line-height: 100px;
+      }
+
+      .cont-box:hover .item-box.two {
+        transform: rotateY(360deg);
+        width: 500px;
+        height: 500px;
+        font-size: 64px;
+        color: white;
+        text-align: center;
+        /* 세로축 가운데 정렬 */
+        line-height: 500px;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="cont-box">
-        <div>
-            <div class="item-box one"></div>
-            <div class="item-box two"></div>
-        </div>
+      <div class="item-box one"></div>
+      <div class="item-box two"> 안녕❣ </div>
     </div>
-</body>
+  </body>
 </html>
