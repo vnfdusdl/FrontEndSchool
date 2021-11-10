@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>animation btn</title>
+    <style>
+      /* 흠.. hover me!라는 콘텐츠를 html상에 넣는 건지 가상요소에 넣는 건지 잘 모르겠고,
+            hover 했을 때 색을 어떻게 바꾸는 건지도 모르겠다.
+            */
+      @keyframes Anim {
+        0% {
+            background-color: violet;
+        }
+        25% {
+            border-radius: 50%;
+            transform: translateX(0) rotateZ(0);
+        }
+        50% {
+            border-radius: 50%;
+            background-color: yellow;
+            transform: translateX(250px) rotateZ(360deg);
+        }
+        75%{
+            background-color: violet;
+            transform: translateX(500px) rotateZ(720deg);
+        }
+        100% {
+            border-radius: 50%;
+            background-color: yellow;
+          transform: translateX(750px) rotateZ(1080deg);
+
+        }
+      }
+
+      .btn {
+        margin: 50px 20px;
+        width: 200px;
+        height: 200px;
+        font-weight: bold;
+        border-radius: 10px;
+        overflow: hidden;
+        position: relative;
+        text-align: center;
+        line-height: 200px;
+        border: 3px solid salmon;
+        transition: all 2s linear;
+      }
+      .btn:hover {
+        animation: Anim 3s linear forwards;
+        border-width: 0;
+      }
+      .btn::after {
+        display: block;
+        content: "Hover me!";
+        position: absolute;
+        color: salmon;
+        font-size: 32px;
+        width: 200px;
+        height: 200px;
+        /* transition: all 1s ease; */
+      }
+      .btn:hover::after {
+        content: "Bye🖐";
+        color: white;
+        font-weight: bold;
+      }
+
+      .btn::before {
+        display: block;
+        content: "";
+        position: absolute;
+        /* color: white; */
+        width: 200px;
+        height: 200px;
+        /* transition: all 0.3s linear; */
+      }
+      /* .선택자!!! btn:hover .btn::before가 아니라 밑에처럼 쓰는 거임 */
+
+      .btn:hover::before {
+        width: 220px;
+        height: 220px;
+        border-width: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="btn">
+      <!-- hover me! -->
+    </div>
+  </body>
+</html>
