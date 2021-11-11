@@ -1,0 +1,193 @@
+@font-face {
+  font-family: "GmarketSansBold";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GmarketSansMedium";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Noto Sans KR";
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2")
+      format("woff2"),
+    url("https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff")
+      format("woff"),
+    url("https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.otf")
+      format("opentype");
+}
+
+/* 네이버에서 쓰는 방법 */
+.sr-only {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1 px;
+  height: 1 px;
+  margin: -1 px;
+  overflow: hidden;
+}
+#app {
+  font-family: GmarketSansMedium;
+  background-color: #5b2386;
+  color: white;
+  /* 텍스트가 속한 block 레벨에서 다 중앙정렬 됨 */
+  text-align: center;
+  padding-bottom: 70px;
+}
+
+.tit-law {
+  /* 가상요소의 자리를 잡기 위해서 */
+  position: relative;
+  /* margin-collapsing현상 때문에 inline-block을 줌*/
+  display: inline-block;
+  /* overflow: hidden; */
+  margin-top: 194px;
+}
+.tit-law::after {
+  display: block;
+  content: "";
+  width: 225px;
+  height: 225px;
+  background-image: url(./images-law/title_bg.png);
+  /* 이미지가 잘리니까 width,height만큼 이미지 크기 수정*/
+  background-size: 225px 225px;
+  /* 중앙 정렬 */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* 너비와 높이를 알고있으면 margin 값을 조정해서 옮길 수도 있고, 모른다면 translate만을 이용 */
+  transform: translate(-50%, -50%);
+  /* 중앙 정렬 끝 */
+}
+
+.tit-law .img-tit {
+  /* 1만시간의법칙 뒬로 시계가 비쳐서 z-index줘서 완전히 올려줌 static은 z-index 안 먹히니까! position이 있어야 함 relative는 normal flow를 해치치 않으니까 렐러티브로 줌*/
+  position: relative;
+  z-index: 10;
+}
+
+.img-txt {
+  /* 이미지는 하나의 값만 줘도 나머지는 자동으로 잡힘 */
+  width: 486px;
+  /* 너비 값을 알 땐 margin 0 auto로 손쉽게 중앙정렬을 해줄 수 있다 */
+  margin: 150px auto 78px;
+  /* 위에 이미지가 inline-block이라 위로 올라감 */
+  display: block;
+}
+.txt-desc {
+  line-height: 24px;
+  font-size: 18px;
+  /* 가상요소 위치 조정하기 위해서 */
+  position: relative;
+  /* 이 값은 피그마에서 텍스트 너비랑 마진 값이랑 따옴표 크기를 더한 값으로 준 거 */
+  width: 475px;
+  /* 너비 값이 고정되면서 나머지는 자동으로 마진값이 됨 그래서 다시 margin 0 auto로 중앙정렬 */
+  margin: 0 auto 102px;
+}
+.txt-desc .tit-desc {
+  font-size: 24px;
+  font-weight: bold;
+}
+.txt-desc::after,
+.txt-desc::before {
+  display: block;
+  content: "";
+  width: 37px;
+  height: 32px;
+  position: absolute;
+}
+.txt-desc::before {
+  background-image: url(./images-law/txt-left.png);
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+.txt-desc::after {
+  background-image: url(./images-law/txt-right.png);
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+.cont-inp,
+.cont-result {
+  font-size: 24px;
+  line-height: 24px;
+}
+.cont-inp .txt-wannabe {
+  margin-bottom: 27px;
+}
+.cont-inp .txt-time {
+  margin-bottom: 115px;
+}
+.cont-inp .txt-wannabe input,
+.cont-inp .txt-time input {
+  width: 228px;
+  height: 57px;
+  border-radius: 7px;
+  border-style: none;
+  /* place-holder 꾸미기 */
+  text-align: center;
+  font-size: 24px;
+}
+
+.cont-inp .btn-exc, .cont-result .btn-go, .cont-result .btn-share {
+  /* 컨텐츠너비와 패딩값이 너비를 정하고 있으니까 굳이 안 정해도 된대  */
+  /* width: 565px; */
+  /* 상하 패딩이 있으니까, 굳이 height를 주지 않아도 됨 */
+  padding: 21px 49px;
+  margin-bottom: 147px;
+  font-family: GmarketSansBold;
+  font-size: 24px;
+  color: #5b2386;
+  background-color: #fcee21;
+  border-radius: 56px;
+  cursor: pointer;
+  border: none;
+}
+.cont-inp .btn-exc::after {
+    display: block;
+    content: '';
+    width:64px;
+    height: 72px;
+    background-image: url(./images-law/hand.png);
+}
+.cont-result .txt-wannabe {
+  margin-bottom: 17px;
+}
+.cont-result .txt-time {
+  margin-bottom: 127px;
+}
+.cont-result .txt-wannabe,
+.cont-result .txt-time {
+  line-height: 72px;
+}
+.cont-result .txt-wannabe strong,
+.cont-result .txt-time strong {
+  font-size: 72px;
+  vertical-align: top;
+  font-family: GmarketSansBold;
+}
+
+.cont-result .btn-share {
+    margin-left: 18px;
+    background-color: #ffff;
+}
+.cont-footer .img-footer {
+    width: 125px;
+    height: 25px;
+    margin: 0 auto 20px;
+}
+.cont-footer .txt-footer {
+    font-size: 12px;
+    line-height: 17px;
+    font-family: Noto Sans KR;
+}
