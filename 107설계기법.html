@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>css설계기법_OOCSS</title>
+    <style>
+      /* 구조와 스킨의 분리 */
+      /* 구조 */
+      /* .btn {
+        width: 200px;
+        height: 80px;
+        font-size: 30px;
+      } */
+      /* 스킨 */
+      /* .btn-close {
+        background-color: black;
+        font-size: 30px;
+        color: #fff;
+        border: 3px dotted #fff;
+      } */
+      /* 스트럭쳐와 모듈의 분리 */
+      #main.btn {
+        width: 300px;
+        padding: 20px;
+        margin: 10px;
+        font-size: 18px;
+        line-height: 1.5;
+      }
+      #main .general {
+        background-color: blueviolet;
+        color: cornsilk;
+      }
+      #main .warning {
+        background-color: chartreuse;
+        color: black;
+      }
+      /* 이렇게 스타일링을 줬을 때, 스타일링은 main에 종속된다. 그래서 이렇게 하지말라는 게 oocss 컨테이너에 종속되게 하지 말라! */
+      /* 모듈화에는 좋으나 안정성이 다소 떨어짐 */
+    </style>
+  </head>
+  <body>
+    <!-- <button type="btn" class="btn "></button>
+    <button type="btn" class="btn  btn-close"></button> -->
+    <main id="main">
+      <button type="button" class="btn general">기본 버튼</button>
+      <button type="button" class="btn warning">취소 버튼</button>
+    </main>
+  </body>
+</html>
