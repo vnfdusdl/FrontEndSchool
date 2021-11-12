@@ -30,9 +30,9 @@
 .sr-only {
   position: absolute;
   clip: rect(0 0 0 0);
-  width: 1 px;
-  height: 1 px;
-  margin: -1 px;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
   overflow: hidden;
 }
 #app {
@@ -59,7 +59,7 @@
   height: 225px;
   background-image: url(./images-law/title_bg.png);
   /* 이미지가 잘리니까 width,height만큼 이미지 크기 수정*/
-  background-size: 225px 225px;
+  background-position: center;
   /* 중앙 정렬 */
   position: absolute;
   top: 50%;
@@ -79,19 +79,19 @@
   /* 이미지는 하나의 값만 줘도 나머지는 자동으로 잡힘 */
   width: 486px;
   /* 너비 값을 알 땐 margin 0 auto로 손쉽게 중앙정렬을 해줄 수 있다 */
-  margin: 150px auto 78px;
+  margin: 123px auto 86px;
   /* 위에 이미지가 inline-block이라 위로 올라감 */
   display: block;
 }
 .txt-desc {
-  line-height: 24px;
+  line-height: 30px;
   font-size: 18px;
   /* 가상요소 위치 조정하기 위해서 */
   position: relative;
   /* 이 값은 피그마에서 텍스트 너비랑 마진 값이랑 따옴표 크기를 더한 값으로 준 거 */
-  width: 475px;
+  max-width: 475px;
   /* 너비 값이 고정되면서 나머지는 자동으로 마진값이 됨 그래서 다시 margin 0 auto로 중앙정렬 */
-  margin: 0 auto 102px;
+  margin: -6px auto 93px;
 }
 .txt-desc .tit-desc {
   font-size: 24px;
@@ -107,14 +107,14 @@
 }
 .txt-desc::before {
   background-image: url(./images-law/txt-left.png);
-  top: 50%;
-  left: 0;
+  top: 33%;
+  left: -1%;
   transform: translateY(-50%);
 }
 .txt-desc::after {
   background-image: url(./images-law/txt-right.png);
-  top: 50%;
-  right: 0;
+  top: 33%;
+  right: -1%;
   transform: translateY(-50%);
 }
 .cont-inp,
@@ -124,9 +124,10 @@
 }
 .cont-inp .txt-wannabe {
   margin-bottom: 27px;
+  line-height: 30px;
 }
 .cont-inp .txt-time {
-  margin-bottom: 115px;
+  margin-bottom: 114px;
 }
 .cont-inp .txt-wannabe input,
 .cont-inp .txt-time input {
@@ -139,12 +140,14 @@
   font-size: 24px;
 }
 
-.cont-inp .btn-exc, .cont-result .btn-go, .cont-result .btn-share {
+.cont-inp .btn-exc,
+.cont-result .btn-go,
+.cont-result .btn-share {
   /* 컨텐츠너비와 패딩값이 너비를 정하고 있으니까 굳이 안 정해도 된대  */
   /* width: 565px; */
   /* 상하 패딩이 있으니까, 굳이 height를 주지 않아도 됨 */
   padding: 21px 49px;
-  margin-bottom: 147px;
+  /* margin-bottom: 147px; */
   font-family: GmarketSansBold;
   font-size: 24px;
   color: #5b2386;
@@ -152,19 +155,30 @@
   border-radius: 56px;
   cursor: pointer;
   border: none;
+  position: relative;
+  line-height: 20px;
+  top: -3px;
+  letter-spacing: -1px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+.cont-inp .btn-exc {
+  margin-bottom: 147px;
 }
 .cont-inp .btn-exc::after {
-    display: block;
-    content: '';
-    width:64px;
-    height: 72px;
-    background-image: url(./images-law/hand.png);
+  display: block;
+  content: "";
+  width: 64px;
+  height: 72px;
+  background-image: url(./images-law/hand.png);
+  position: absolute;
+  bottom: -20px;
+  right: -63px;
 }
 .cont-result .txt-wannabe {
   margin-bottom: 17px;
 }
 .cont-result .txt-time {
-  margin-bottom: 127px;
+  margin-bottom: 124px;
 }
 .cont-result .txt-wannabe,
 .cont-result .txt-time {
@@ -177,17 +191,123 @@
   font-family: GmarketSansBold;
 }
 
-.cont-result .btn-share {
-    margin-left: 18px;
-    background-color: #ffff;
+.cont-result .btn-go {
+  margin-bottom: 127px;
 }
+
+.cont-result .btn-share {
+  margin-left: 11px;
+  background-color: #ffff;
+}
+
 .cont-footer .img-footer {
-    width: 125px;
-    height: 25px;
-    margin: 0 auto 20px;
+  width: 125px;
+  height: 25px;
+  margin: 0 auto 18px;
 }
 .cont-footer .txt-footer {
-    font-size: 12px;
-    line-height: 17px;
-    font-family: Noto Sans KR;
+  font-size: 12px;
+  line-height: 17px;
+  font-family: Noto Sans KR;
 }
+
+@media screen and (max-width: 360px) {
+  #app {
+    padding: 0 20px 32px;
+  }
+  /* 여기 이미지 크기를 조절하면 안되나? */
+  .tit-law .img-tit {
+    width: 267px;
+    height: 57px;
+    width: 100%;
+  }
+
+  .tit-law::after {
+    width: 106px;
+    height: 106px;
+    margin: -3px 0 0 -3px;
+    background-size: 106px;
+  }
+  .img-txt {
+    margin-top: 41px;
+    /* 줄어들수도 있으니까 max-width로 준다 */
+    max-width: 297px;
+  }
+  .txt-desc {
+    font-size: 14px;
+  }
+  .txt-desc strong {
+    font-size: 16px;
+  }
+  .txt-desc::after,
+  .txt-desc::before {
+    width: 18px;
+    height: 15px;
+    /*  박스 크기만큼 백그라운드 이미지 사이즈도 사이즈 조절!! */
+    background-size: 18px 15px;
+  }
+  .cont-inp .txt-wannabe,
+  .cont-inp .txt-time {
+    font-size: 14px;
+  }
+  .cont-inp .txt-wannabe input,
+  .cont-inp .txt-time input {
+    width: 156px;
+    height: 37px;
+    font-size: 14px;
+    line-height: 14px;
+  }
+  .cont-inp .txt-wannabe {
+    margin-bottom: 17px;
+  }
+  .cont-inp .txt-time input {
+    margin-top: 17px;
+  }
+  .cont-inp .btn-exc {
+    width: 241px;
+    padding: 19px 25px 17px;
+    font-size: 17px;
+    line-height: 17px;
+    border-radius: 13px;
+  }
+  .cont-inp .btn-exc::after {
+    width: 43px;
+    height: 48px;
+    right: -45px;
+    background-size: 43px 48px;
+  }
+  .cont-result .txt-wannabe, .cont-result .txt-time {
+    font-size: 14px;
+    line-height: 14px;
+    
+  }
+  .cont-result .txt-wannabe strong, .cont-result .txt-time strong {
+    font-size: 24px;
+    line-height: 24px;
+    vertical-align: -4px;
+  }
+
+  .cont-result .btn-go, .cont-result .btn-share{
+    font-size: 14px;
+    line-height: 14px;
+    width: 186px;
+    height: 40px;
+    padding: 13px 17px;
+  }
+  .cont-result .btn-share {
+    width: 92px;
+    height: 40px;
+  }
+  .cont-result .btn-go {
+    margin-bottom: 88px;
+  }
+  .cont-footer .img-footer {
+    width: 91px;
+    height: 18px;
+
+  }
+  .cont-footer .txt-footer {
+    font-size: 9px;
+    line-height: 13px;
+    color: rgba(255, 255, 255, 0.7);
+  }
