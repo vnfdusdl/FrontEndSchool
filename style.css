@@ -1,0 +1,57 @@
+@charset "utf-8";
+
+/* 로그인 팝업창 */
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+
+.sr-only {
+	position: absolute;
+	clip: rect(0 0 0 0);
+	width: 1 px;
+	height: 1 px;
+	margin: -1 px;
+	overflow: hidden;
+  }
+  
+#login {
+  width: 500px;
+  height: 240px;
+  border: 1px solid #c4c4c4;
+  box-sizing: border-box;
+  border-radius: 5px;
+  text-align: center;
+  padding: 30px;
+  margin: 50px auto;
+}
+.logo-img {
+    width: 128px;
+    height: 40px;
+    margin-bottom: 28px;
+}
+.login-txt {
+    line-height: 20px;
+    margin-bottom: 32px;
+}
+.login-go-btn {
+    text-decoration: none;
+    color: #fff;
+    font-size: 22px;
+    line-height: 28px;
+    padding: 17px 180px;
+    background-color: #2F80ED;
+    width: 440px;
+    height: 60px;
+    border-radius: 5px;
+}
+
+/* 로그인 모달창 */
+body {
+    text-align: center;
+}
+/* container에 width랑 heigt를 줘도 되나?ㅠㅠ */
+#container {
+    /* width: 520px;
+    height: 712px; */
+    border: 1px solid #c4c4c4;
+    box-sizing: border-box;
+    border-radius: 10px;
+}

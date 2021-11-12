@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>login form</title>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/fb8e0d1b28.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <section id="container">
+        <h1 class="sr-only">로그인 화면</h1>
+      <header class="login-header">
+        <h2>로그인 또는 회원가입</h2>
+        <button type="button" class="off-btn">
+          <i class="fas fa-times"></i>
+        </button>
+      </header>
+      <main class="login-main">
+        <p>위니브에서 여러분의 궁금증을 해결하세요! :)</p>
+        <form action="#" class="login-form">
+          <label for="id" class="sr-only"></label>
+          <input type="text" placeholder="아이디" id="id" class="input-id" required />
+          <label for="pw" class="sr-only"></label>
+          <input
+            type="password"
+            placeholder="비밀번호"
+            id="pw"
+            class="input-pw"
+            required
+          />
+          <input type="checkbox" name="checkbox" class="login-stay-checkbox" />
+          <label for="checkbox" class="login-stay-txt">로그인 상태 유지</label>
+          <button class="login-btn"></button>
+          <a href="#" class="go-join">회원가입</a>
+          <a href="#" class="go-find">아이디/비밀번호 찾기</a>
+        </form>
+        <span>또는</span>
+        <a href="#">구글 계정으로 로그인</a>
+        <a href="#">페이스북 계정으로 로그인</a>
+        <a href="#">네이버 계정으로 로그인</a>
+        <a href="#">카카오톡 계정으로 로그인</a>
+      </main>
+    </section>
+  </body>
+</html>
