@@ -56,4 +56,8 @@ table {
 	margin: -1 px;
 	overflow: hidden;
   }
-  
+
+a {
+	text-decoration: none;
+	color:black;
+}

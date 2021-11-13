@@ -7,25 +7,30 @@
     <title>login form</title>
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="style.css" />
-    <script
-      src="https://kit.fontawesome.com/fb8e0d1b28.js"
-      crossorigin="anonymous"
-    ></script>
   </head>
   <body>
     <section id="container">
-        <h1 class="sr-only">로그인 화면</h1>
+      <h1 class="sr-only">로그인 화면</h1>
       <header class="login-header">
-        <h2>로그인 또는 회원가입</h2>
-        <button type="button" class="off-btn">
-          <i class="fas fa-times"></i>
+        <h2 class="login-header-txt">로그인 또는 회원가입</h2>
+        <button type="button" class="close-btn">
+          <img src="./close.png" alt="닫기" />
         </button>
       </header>
       <main class="login-main">
-        <p>위니브에서 여러분의 궁금증을 해결하세요! :)</p>
+        <p class="login-main-txt">
+          위니브에서 여러분의 궁금증을 해결하세요! :)
+        </p>
         <form action="#" class="login-form">
           <label for="id" class="sr-only"></label>
-          <input type="text" placeholder="아이디" id="id" class="input-id" required />
+          <input
+            type="text"
+            placeholder="아이디"
+            id="id"
+            class="input-id"
+            required
+          />
+          <p class="is-alarm">아이디를 입력해 주세요.</p>
           <label for="pw" class="sr-only"></label>
           <input
             type="password"
@@ -34,17 +39,18 @@
             class="input-pw"
             required
           />
-          <input type="checkbox" name="checkbox" class="login-stay-checkbox" />
+          <p class="is-alarm">아이디 혹은 비밀번호와 일치하지 않습니다.</p>
+          <input type="checkbox" id="checkbox" class="login-stay-checkbox" />
           <label for="checkbox" class="login-stay-txt">로그인 상태 유지</label>
-          <button class="login-btn"></button>
-          <a href="#" class="go-join">회원가입</a>
-          <a href="#" class="go-find">아이디/비밀번호 찾기</a>
+          <button class="login-btn">로그인</button>
+          <!-- form 태그 바깥에 적는 게 낫나..? -->
+          <a href="#" class="go-join">회원가입</a><a href="#" class="go-find">아이디/비밀번호 찾기</a>
         </form>
-        <span>또는</span>
-        <a href="#">구글 계정으로 로그인</a>
-        <a href="#">페이스북 계정으로 로그인</a>
-        <a href="#">네이버 계정으로 로그인</a>
-        <a href="#">카카오톡 계정으로 로그인</a>
+        <span class="login-with-txt">또는</span>
+        <a href="#" class="login-with-btn login-with-google">구글 계정으로 로그인</a>
+        <a href="#" class="login-with-btn login-with-facebook">페이스북 계정으로 로그인</a>
+        <a href="#" class="login-with-btn login-with-naver">네이버 계정으로 로그인</a>
+        <a href="#" class="login-with-btn login-with-kakao">카카오톡 계정으로 로그인</a>
       </main>
     </section>
   </body>
