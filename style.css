@@ -131,19 +131,6 @@
   margin: 0 0 10px 4px;
 }
 
-/* 체크박스 동그랗게 만드는 거 잘 모르겠다..ㅠㅠ */
-/* .login-form .login-stay-checkbox {
-    display: none;
-} */
-/* .login-form .login-stay-txt::before {
-  content: '';
-  display: inline-block;
-  width: 22px;
-  height: 22px;
-  background-image: url(./Ellipse\ 1.png);
-  background-size: contain;
-} */
-
 .login-form .login-stay-txt {
   display: inline-block;
   margin-bottom: 21px;
@@ -151,7 +138,31 @@
   line-height: 20px;
   font-family: "SpoqaHanSansNeo-Medium";
   color: #767676;
+  width: 100%;
+  text-align: left;
 }
+.login-form .login-stay-txt::before {
+  content: '';
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  background-image: url(./uncheck-point.png);
+  background-size: 22px 22px;
+  background-repeat: no-repeat;
+  vertical-align: -5px;
+  margin:0 8px 0 4px;
+}
+.login-form .login-stay-checkbox:checked + .login-stay-txt::before {
+  content: '';
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  background-image: url(./check-point.png);
+  background-size: 22px 22px;
+  background-repeat: no-repeat;
+  vertical-align: -5px;
+  margin:0 8px 0 4px;
+} 
 .login-form .login-btn {
   width: 472px;
   height: 50px;
