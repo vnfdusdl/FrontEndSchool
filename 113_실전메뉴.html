@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>실전메뉴만들기</title>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <style>
+        /* styel */
+        a {
+            color: whitesmoke;
+        }
+        nav {
+            background-color: #222;
+            padding: 0 15px;
+        }
+        .logo {
+            font-size: 20px;
+            padding: 10px;
+        }
+        .item {
+            padding: 10px;
+        }
+        a:hover {
+            color:#ccc;
+        }
+        .menu {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .menu li a {
+            display: block;
+            padding: 10px;
+        }
+        .menu li.subitem a {
+            padding-left: 20px;
+        }
+        .subitem {
+            /* 개발할 때는 display: block으로 */
+            /* display:block; */
+            display: none;
+        }
+        .icon {
+            /* 모바일 환경에서만 보이게 할 것 */
+            display: none;
+        }
+        @media screen and (max-width:800px) {
+            .icon{
+                display: block;
+                /* item들과의 순서를 조정하려고 order를 줌.  이걸 안 적으면 이게 밑으로 내려간다 */
+                /* order를 준 이유는 아이콘 위치가 하단에 있는 것을 위로 끌어올리기 위해 */
+                
+                order:1;
+                font-size: 25px;
+                line-height: 35px;
+            }
+            .item {
+                order:2;
+                width: 100%;
+                text-align: center;
+            }
+            .subitem {
+                /* submenu 보이게, 안 보이게 */
+                display: none;
+            }
+        }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul class="menu">
+        <li class="logo">
+          <a href="#">LOGO</a>
+        </li>
+        <li class="item">
+          <a href="#">ABOUT ME</a>
+        </li>
+        <li class="item">
+          <a href="#">SKILLS</a>
+        </li>
+        <li class="item has-submenu">
+          <a href="#">BLOG</a>
+          <ul class="submenu">
+            <li class="subitem">
+              <a href="#">HTML</a>
+            </li>
+            <li class="subitem">
+              <a href="#">CSS</a>
+            </li>
+            <li class="subitem">
+              <a href="#">JAVASCRIPT</a>
+            </li>
+            <li class="subitem">
+              <a href="#">INFRA</a>
+            </li>
+            <li class="subitem">
+              <a href="#">NODE</a>
+            </li>
+          </ul>
+        </li>
+        <li class="item">
+          <a href="#">CONTACT</a>
+        </li>
+        <li class="icon">
+          <a href="#"><i class="fas fa-bars"></i></a>
+        </li>
+      </ul>
+    </nav>
+  </body>
+</html>

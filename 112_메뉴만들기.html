@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <title>메뉴만들기_1</title>
+    <style>
+         .container-color {
+            background-color: cornsilk;
+            border: solid 3px black;
+            height: 75px;
+            padding: 5px;
+        }
+        .container {
+            display: flex;
+        }
+        .item {
+            width: 150px;
+            background-color: darkcyan;
+            border: solid 3px black;
+            border-radius: 10px;
+            margin: 5px;
+            padding: 5px;
+            text-align: center;
+            color: whitesmoke;
+            font-size: 1.2em;
+            font-weight: 700;
+            line-height: 2.5em;
+            transition: all .5s;
+        }
+        .logo {
+            width: 100px;
+            background-color: darkcyan;
+            border: solid 3px black;
+            border-radius: 10px;
+            margin: 5px;
+            padding: 5px;
+            text-align: center;
+            color: whitesmoke;
+            font-size: 1.2em;
+            font-weight: 700;
+            line-height: 2.5em;
+            transition: all .5s;
+        }
+        /* 간격을 자동으로 잡아주는 방법 -> 로고 부분과 다른 메뉴 사이의 간격을 넓힐 수 있다.*/
+        .logo {
+            margin-right: auto;
+        }
+        .item:hover {
+            background-color: tomato;
+            color: black;
+        }
+    </style>
+<body>
+    <ul class="container-color container">
+        <li class="logo">LOGO</li>
+        <li class="item">ABOUT ME</li>
+        <li class="item">SKILL</li>
+        <li class="item">PROTFOLIIO</li>
+        <li class="item">CONTACT</li>
+    </ul>
+</body>
+</html>
