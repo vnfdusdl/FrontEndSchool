@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        /* 첫번째 자식인 p의 bg를 바꾸는 것.*/
+        /* 직계 부모를 보고, 거기서 몇 번째 자식인 p 이렇게 확인해야함 */
+        /* 첫번째 자식인 p가 없어서 색이 안 바뀌는 것 */
+        p:first-child {
+            background-color: coral;
+        }
+        p:nth-child(2) {
+            background: #000;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <span>첫번쨰</span>
+        <p>p의 첫번째</p>
+        <p>p의 두번째</p>
+        <p>p의 세번째</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,97 @@
+.txt-hide {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+}
+.btn-login {
+  width: 100%;
+  padding: 17px 0 15px;
+  line-height: 28px;
+  font-size: 22px;
+  font-weight: bold;
+  background-color: #2f80ed;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.btn-close {
+  width: 16px;
+  height: 16px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.module-inp .inp-login {
+  display: block;
+  width: 100%;
+  padding: 15px 0 15px 16px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.module-inp.module-inp-id.error .inp-login {
+  border: 2px solid #f4492e;
+}
+.module-inp .inp-error {
+  display: none;
+  margin: 6px 0 0 4px;
+  font-size: 14px;
+  line-height: 18px;
+  color: #f4492e;
+}
+/* error 클래스를 js로 넣었다뺐다 해주고, error 클래스가 있을 때만 diplay 되도록 */
+.module-inp.error .inp-error {
+  display: block;
+}
+
+.link-sns-login {
+    display: block;
+    padding: 15px 0 16px;
+    color: #767676;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid black;
+    /* 이미지만큼 당겨주기 위해서! */
+    text-indent: -22px;
+}
+
+.link-sns-login::before {
+    content: '';
+    display: block;
+    width: 22px;
+    height: 22px;
+    float: left;
+    margin-left: 16px;
+    background-image: url(./images-login/icon_google.png);
+}
+.link-sns-login.icon-naver {
+    border-color: #00bf18;
+}
+.link-sns-login.icon-naver::before {
+    background-image: url(./images-login/icon_naver.png);
+} 
+.link-sns-login.icon-facebook {
+    border-color: #2d9cdb;
+}
+.link-sns-login.icon-facebook::before {
+    background-image: url(./images-login/icon_facebook.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.link-sns-login.icon-kakao {
+    border-color: #f2c94c;
+}
+.link-sns-login.icon-kakao::before {
+    background-image: url(./images-login/icon_kakao.png);
+}

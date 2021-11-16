@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>넓이 자동 계산</title>
+    <style>
+        .container {
+            display: flex;
+        }
+        .item:first-child {
+            width: 200px;
+            height: 200px;
+            background-color: indianred;
+        }
+        .item:last-child {
+            /* 100%에서 200px을 뺀 것만큼 너비를 갖게 됨 */
+            /* width: calc(100% - 200px); */
+            /* 100%에서 400px을 뺀 것만큼 너비를 갖게 됨 */
+            /* width: calc(100% - 400px); */
+            /* width: calc(80vw - 200px); */
+            /* width: 200vmin; */
+            /* min-width: 500px; */
+            /* 둘 중 작은 값 사용하는 것 */
+            width: min(50vw,500px);
+            background-color: cornflowerblue;
+        }
+    </style>
+</head>
+<body>
+    <!-- calc() -->
+    <!-- min() -->
+    <!-- max() -->
+    <div class="container">
+        <div class="item"></div>
+        <div class="item">hello world</div>
+    </div>
+</body>
+</html>
