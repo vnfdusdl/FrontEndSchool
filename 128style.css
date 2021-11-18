@@ -1,0 +1,169 @@
+@keyframes object-rotate {
+    0% {
+        transform: rotateY(0);
+        /* transform: rotateY(-1turn) rotateX(0deg) rotateZ(0deg); */
+        
+    }
+    33.33% {
+        /* transform: rotateX(10deg)  rotateZ(-20deg); */
+    }
+    50% {
+        /* transform: rotateY(-1turn); */
+    }
+    66.66% {
+        /* transform: rotateX(0deg) rotateZ(0deg); */
+    }
+    100% {
+        /* turn이라는 단위는 정확히 한 바퀴 돌리라는 의미이다.  */
+        transform: rotateY(-1turn);
+        /* transform: rotateX(0) rotateY(-2turn) rotateZ(20deg); */
+    }
+}
+
+@keyframes scene-rotate {
+    0% {
+        transform: rotateX(0deg) rotateZ(0deg);
+
+    }
+    33.33% {
+        transform: rotateX(10deg) rotateZ(-20deg);
+    }
+    66.66% {
+        transform: rotateX(0deg) rotateZ(0deg);
+    }
+    100% {
+        transform: rotateX(10deg) rotateZ(20deg);
+    }
+
+}
+
+@keyframes colorChange1 {
+    0% {
+        color: lightskyblue;
+    }
+    33.33% {
+        color: lightgreen;
+    }
+    66.66% {
+        color: lightpink;
+    }
+    100% {
+        color: lightyellow;
+    }
+}
+
+@keyframes colorChange2 {
+    0% {
+        color: lightgreen;
+    }
+    33.33% {
+        color: lightpink;
+    }
+    66.66% {
+        color: lightyellow;
+    }
+    100% {
+        color: lightskyblue;
+    }
+}
+@keyframes colorChange3 {
+    0% {
+        color: lightpink;
+    }
+    33.33% {
+        color: lightyellow;
+    }
+    66.66% {
+        color: lightskyblue;
+    }
+    100% {
+        color: lightgreen;
+    }
+}
+@keyframes colorChange4 {
+    0% {
+        color: lightyellow;
+    }
+    33.33% {
+        color: lightskyblue;
+    }
+    66.66% {
+        color: lightgreen;
+    }
+    100% {
+        color: lightpink;
+    }
+}
+
+body {
+    /* 이렇게 줘도 상관 없나봐 신기 */
+    width: 100vh;
+}
+.container {
+    /* contaitner가 쫙 늘어지는 거!!  body에 쫙 붙게 된다.*/
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scene {
+    /* 이 속성은 상속이 안됨 그래서 밑으로 쭉 다 줘야함 */
+    transform-style: preserve-3d;
+    /* transform: rotateX(); */
+    animation: scene-rotate 20s linear infinite alternate;
+    /* animation을 0%와 100%를 맞추는 방법으로도 할 수 있지만, 그렇게 하면 조금 부자연스럽기때문에, alternate를 준다.  */
+
+}
+
+.circle {
+    font-size: 40px;
+    font-weight: bold;
+    /* 나중에 작성 */
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+    animation: object-rotate 10s linear infinite;
+    transform-style: preserve-3d;
+}
+.circle-back {
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background-image: linear-gradient( 135deg, #FFF5C3 10%, #9452A5 100%);
+    /* animation: object-rotate 10s linear infinite; */
+    transform-style: preserve-3d;
+    position: absolute;
+    top: -200px;
+    left: -200px;
+    border-radius: 50%;
+}
+.circle-back span {
+    animation: starTurn 10s linear infinite;
+}
+
+/* html 파일 개발자 도구로 보면 class 보임 */
+.cricle .word {
+    transform-style: preserve-3d;
+}
+.circle span {
+    position: absolute;
+    transform: rotateY(calc(var(--char-index)*15deg)) translateZ(420px);
+    transform-style: preserve-3d;
+}
+
+.circle span:nth-child(4n) {
+    animation: colorChange1 3s linear infinite alternate;
+}
+.circle span:nth-child(4n-1) {
+    animation: colorChange2 3s linear infinite alternate;
+}
+.circle span:nth-child(4n-2) {
+    animation: colorChange3 3s linear infinite alternate;
+}
+.circle span:nth-child(4n-3) {
+    animation: colorChange4 3s linear infinite alternate;
+}
