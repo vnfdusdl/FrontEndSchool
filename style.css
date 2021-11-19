@@ -1,0 +1,376 @@
+@charset "utf-8";
+
+.sr-only {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1 px;
+    height: 1 px;
+    margin: -1 px;
+    overflow: hidden;
+}
+
+body {
+    font-family: "Noto Sans KR", sans-serif;
+    background-color: #eae8fe;
+}
+section {
+    margin: 0 10px;
+    /* margin-top: 248px; */
+}
+
+#app {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  padding-top: 247px;
+  /* flex-wrap을 안 해줬더니 화면크기가 작아져도(심지어 미쿼를 설정해도) 화면이 적용되지 않았음 */
+  flex-wrap: wrap;
+}
+
+/* 왜 안 나옴??????? */
+/* 아 sr-only때문에 그랬군 */
+.tit-app img {
+  position: absolute;
+  width: 386px;
+  height: 180px;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  /* z-index: 10; */
+}
+
+.vending-machine {
+  width: 360px;
+  /* height: 545px; */
+  padding: 31px 27px 24px;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #ffffff;
+}
+.vending-machine .list-item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  position: relative;
+}
+/* 얘를 넣으면,, 품절 거기를 brfore로 잡아서 안되는데 */
+/* .vending-machine .list-item .btn-item:active::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top:0;
+  left: 0;
+  border: 3px solid #6327fe;
+  width: 100%;
+  height: 100%;
+} */
+
+.vending-machine .list-item .btn-item {
+  position: relative;
+  width: 94px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  padding: 10px 11px 9px;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+
+/* .vending-machine .list-item li:nth-child(1) .btn-item,
+.vending-machine .list-item li:nth-child(5) .btn-item {
+  border: 3px solid #6327fe;
+} */
+.vending-machine .list-item li:nth-child(2) .btn-item::before {
+  content: "";
+  display: block;
+  background-image: url("../img/Sold-out.png");
+  background-size: 60px;
+  background-repeat: no-repeat;
+  width: 60px;
+  height: 100px;
+  z-index: 10;
+  position: absolute;
+  top: 40px;
+  left: 18px;
+}
+.vending-machine .list-item li:nth-child(2) .btn-item::after {
+  content: "";
+  display: block;
+  width: 94px;
+  height: 133px;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: absolute;
+}
+
+.vending-machine .list-item .btn-item .img-item {
+  width: 35px;
+  height: 64px;
+  margin-bottom: 6px;
+}
+.vending-machine .list-item .btn-item .tit-item {
+  font-size: 9px;
+  line-height: 13px;
+  margin-bottom: 7px;
+}
+.vending-machine .list-item .btn-item .txt-item {
+  width: 70px;
+  height: 22px;
+  box-sizing: border-box;
+  padding: 5px 15px;
+  background-color: #6327fe;
+  border-radius: 50px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.vending-machine .cont-return {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 11px;
+}
+.vending-machine .cont-return .info-balance {
+  background-color: #eae8fe;
+  padding: 6px 10px;
+  font-size: 14px;
+  line-height: 20px;
+  width: 200px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  margin-right: 12px;
+}
+.vending-machine .cont-return .info-balance .txt-balance {
+  float: right;
+}
+
+.vending-machine .cont-return .btn-return {
+  background-color: #fff;
+  /* width: 93px; */
+  box-sizing: border-box;
+  padding: 7px 9px;
+  font-size: 13px;
+  line-height: 18px;
+  text-align: center;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+}
+.vending-machine .cont-put {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 11px;
+}
+.vending-machine .cont-put .inp-put {
+  background-color: #fff;
+  padding: 6px 6px;
+  font-size: 13px;
+  line-height: 19px;
+  width: 200px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  margin-right: 12px;
+  border: 1px solid #bdbdbd;
+}
+.vending-machine .cont-put .btn-put {
+    width: 94px;
+    box-sizing: border-box;
+    padding: 7px 9px;
+    font-size: 13px;
+    line-height: 18px;
+    text-align: center;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+}
+.vending-machine .cont-get {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.vending-machine .cont-get .list-item-selected {
+    height: 106px;
+    padding: 12px 8px 12px 12px;
+    box-sizing: border-box;
+    overflow-y: scroll;
+    background-color: #eae8fe;
+    border: 1px solid #bdbdbd;
+    border-radius: 5px;
+}
+.vending-machine .cont-get .item-selected {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 170px;
+    background-color: #fff;
+    padding: 6px 10px;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+/* 스크롤바 */
+.list-item-selected::-webkit-scrollbar {
+    width: 11px;
+}
+.list-item-selected::-webkit-scrollbar-thumb {
+    
+    background-color: #fff;
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 3px solid transparent;
+}
+.vending-machine .cont-get .item-selected:not(:last-child) {
+    margin-bottom: 6px;
+}
+.vending-machine .cont-get .list-item-selected .img-item {
+    width: 18px;
+    margin-right: 10px;
+}
+.vending-machine .cont-get .list-item-selected .txt-item {
+    font-size: 9px;
+    line-height: 13px;
+}
+.vending-machine .cont-get .list-item-selected .num-counter {
+  /* display: inline-block; */
+  width: 30px;
+  height: 30px;
+  padding: 4px 0 6px;
+  box-sizing: border-box;
+  border: 1px solid #bdbdbd;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 20px;
+  float: right;
+  margin: 0 0 0 auto;
+}
+.vending-machine .cont-get .btn-get {
+  background-color: #6327fe;
+  color: #fff;
+  font-size: 13px;
+  line-height: 19px;
+  padding: 43px 35px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  width: 94px;
+  margin: 0 0 0 auto;
+}
+
+/* 나의 정보 화면 */
+
+.my-info .cont-mymoney {
+  padding: 9px 27px;
+  width: 360px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+}
+.my-info .cont-mymoney .info-mymoney {
+  background-color: #eae8fe;
+  padding: 6px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  line-height: 20px;
+}
+.my-info .cont-mymoney .info-mymoney .txt-mymoney {
+  float: right;
+  font-weight: 700;
+}
+.my-info .cont-myitems {
+  width: 360px;
+  padding: 25px 27px 26px;
+  box-sizing: border-box;
+  background-color: #fff;
+  /* margin-bottom: 6px; */
+}
+.my-info .cont-myitems > strong {
+  display: block;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 700;
+  text-align: center;
+  width: 100%;
+  margin: 0 auto 13px;
+}
+.my-info .cont-myitems .list-item-selected {
+    background-color: #eae8fe;
+    border-radius: 5px;
+    padding: 12px 12px 12px 12px;
+    width: 306px;
+    height: 364px;
+    box-sizing: border-box;
+    overflow-y: scroll;
+    margin-bottom: 6px;
+}
+
+
+.my-info .cont-myitems .list-item-selected .item-selected {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 276px;
+    background-color: #fff;
+    padding: 6px 10px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 6px;
+}
+.my-info .cont-myitems .item-selected .img-item {
+    width: 18px;
+    margin-right: 10px;
+}
+.my-info .cont-myitems .item-selected .txt-item {
+    font-size: 9px;
+    line-height: 13px;
+}
+.my-info .cont-myitems .item-selected .num-counter {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    padding: 4px 0 6px;
+    box-sizing: border-box;
+    border: 1px solid #bdbdbd;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 0 0 auto;
+}
+.my-info .cont-myitems .txt-total {
+    margin: 0;
+    text-align: right;
+    font-size: 12px;
+    line-height: 17px;
+}
+
+/* 미디어쿼리 */
+@media screen and (max-width: 360px) {
+    body {
+        background-color: #fff;
+    }
+    #app {
+        flex-direction: column;
+        padding-top: 30px;
+    }
+    .tit-app img {
+        width: 166px;
+        height: 71px;
+    }
+    .vending-machine {
+        padding-bottom: 16px;
+        margin: 66px 0 0 0;
+    }
+    .my-info {
+        margin: 0;
+    }
+    .my-info .cont-mymoney {
+        margin-top: 0px;
+        margin-bottom: 0;
+    }
+    .my-info .cont-myitems {
+        padding-top: 32px;
+        padding-bottom: 43px;
+        margin: 0;
+    }
+}
