@@ -15,7 +15,7 @@ body {
 }
 section {
     margin: 0 10px;
-    margin-top: 248px;
+    /* margin-top: 248px; */
 }
 
 #app {
@@ -23,7 +23,9 @@ section {
   justify-content: center;
   align-items: flex-start;
   position: relative;
-  /* padding-top: 247px; */
+  padding-top: 247px;
+  /* flex-wrap을 안 해줬더니 화면크기가 작아져도(심지어 미쿼를 설정해도) 화면이 적용되지 않았음 */
+  flex-wrap: wrap;
 }
 
 /* 왜 안 나옴??????? */
@@ -35,7 +37,7 @@ section {
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 10;
+  /* z-index: 10; */
 }
 
 .vending-machine {
@@ -45,8 +47,12 @@ section {
   box-sizing: border-box;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   background-color: #ffffff;
+}
+.vending-machine .list-item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 .vending-machine .list-item .btn-item {
   position: relative;
@@ -65,7 +71,8 @@ section {
 
 .vending-machine .list-item:nth-child(2) .btn-item,
 .vending-machine .list-item:nth-child(6) .btn-item {
-    border: 3px solid #6327fe;
+  border: 3px solid #6327fe;
+
 }
 .vending-machine .list-item:nth-child(3) .btn-item::before {
   content: "";
