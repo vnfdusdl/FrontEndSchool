@@ -1,23 +1,87 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title></title>
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="./126module-style.css">
-    <link rel="stylesheet" href="./126style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="./126module-style.css" />
+    <link rel="stylesheet" href="./126style.css" />
+  </head>
+  <body>
     <main id="appLogin">
-        <article class="cont-login">
-            <h1 class="tit-weniv">
-                <img src="./images-login/logo.png" alt="Weniv">
-            </h1>
-            <p class="txt-login">위니브를 더 즐겁고 편리하게 이용하세요.</p>
+      <article class="cont-login">
+        <h1 class="tit-weniv">
+          <img src="./images-login/logo.png" alt="Weniv" />
+        </h1>
+        <p class="txt-login">위니브를 더 즐겁고 편리하게 이용하세요.</p>
+        <button type="button" class="btn-login">로그인</button>
+      </article>
+      <article class="modal-login on">
+        <h2 class="txt-hide">회원으로 로그인 혹은 sns 로그인</h2>
+        <section class="cont-form-login">
+          <h3 class="tit-form">로그인 또는 회원가입</h3>
+          <p class="txt-form">위니브에서 여러분의 궁금증을 해결하세요! :)</p>
+          <form class="form-login">
+            <fieldset class="module-inp module-inp-id error">
+              <lable for="inpId" class="txt-hide">아이디</lable>
+              <input
+                type="text"
+                class="inp-login"
+                placeholder="아이디"
+                id="inpId"
+              />
+              <!-- display:none;으로 해야 sr-reader가 읽지 않는다! 안그러면 눈엔 안 보여도 읽음 -->
+              <strong class="inp-error">아이디를 입력해 주세요.</strong>
+            </fieldset>
+            <fieldset class="module-inp error">
+              <lable for="inpPw" class="txt-hide">비밀번호</lable>
+              <input
+                type="text"
+                class="inp-login"
+                placeholder="비밀번호"
+                id="inpPw"
+              />
+              <strong class="inp-error"
+                >아이디 혹은 비밀번호와 일치하지 않습니다.</strong
+              >
+            </fieldset>
+            <input type="checkbox" id="inpHold" class="inp-hold txt-hide" />
+            <label for="inpHold" class="label-hold">로그인 상태 유지</label>
             <button type="button" class="btn-login">로그인</button>
-        </article>
+            <button type="button" class="btn-close">
+              <img src="./images-login/close.png" alt="로그인 닫기" />
+            </button>
+            <a href="#none" class="link-signup">회원가입</a><a href="#none" class="link-lost">아이디/비밀번호 찾기</a>
+          </form>
+          <section class="cont-sns-login">
+            <h4 class="txt-hide">소셜 계정으로 로그인</h4>
+            <ul class="list-sns">
+              <li>
+                <a href="#none" class="link-sns-login icon-google"
+                  >구글 계정으로 로그인</a
+                >
+              </li>
+              <li>
+                <a href="#none" class="link-sns-login icon-naver"
+                  >네이버 계정으로 로그인</a
+                >
+              </li>
+              <li>
+                <a href="#none" class="link-sns-login icon-facebook"
+                  >페이스북 계정으로 로그인</a
+                >
+              </li>
+              <li>
+                <a href="#none" class="link-sns-login icon-kakao"
+                  >카카오 계정으로 로그인</a
+                >
+              </li>
+            </ul>
+          </section>
+        </section>
+      </article>
     </main>
-</body>
+  </body>
 </html>

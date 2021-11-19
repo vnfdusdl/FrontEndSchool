@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            /* appearance: none; */
+        }
+        select {
+            background-color: pink;
+            border-radius: 20px;
+            font-size: 50px;
+            color: #fff;
+            /* 화살표 부분 커스텀 하고 싶을 땐 apperance:none;을 주고, 백그라운드로 꾸며준다 */
+            appearance: none;
+            background-image: url(./image/lock.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: right;
+        }
+        option {
+            background-color: palevioletred;
+            color: plum;
+
+        }
+    </style>
+</head>
+<body>
+    <button>button</button>
+    <label for="sel">선택하세요</label>
+    <select name="" id="sel">
+        <option value="1">one</option>
+        <option value="2">two</option>
+        <option value="3">three</option>
+    </select>
+</body>
+</html>

@@ -34,6 +34,8 @@
   font-weight: 500;
   font-size: 16px;
   line-height: 20px;
+  box-sizing: border-box;
+  border-radius: 5px;
 }
 
 .module-inp.module-inp-id.error .inp-login {

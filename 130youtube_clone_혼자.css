@@ -130,15 +130,14 @@ body {
     transform-style: preserve-3d;
 }
 .circle-back {
-    width: 400px;
-    height: 400px;
+    width: 350px;
+    height: 350px;
     border-radius: 50%;
-    /* background-image: linear-gradient( 135deg, #FFF5C3 10%, #9452A5 100%); */
-    /* animation: object-rotate 10s linear infinite; */
+    background-image: linear-gradient( 135deg, #FFF5C3 10%, #9452A5 100%);
     transform-style: preserve-3d;
     position: absolute;
-    top: -200px;
-    left: -200px;
+    top: -160px;
+    left: -160px;
     font-size: 250px;
     text-align: center;
 }
@@ -147,25 +146,27 @@ body {
 }
 
 /* html 파일 개발자 도구로 보면 class 보임 */
-.cricle1 .word {
+
+
+.scene2 {
     transform-style: preserve-3d;
 }
-.circle1 span {
-    position: absolute;
-    transform: rotateY(calc(var(--char-index)*15deg)) translateZ(420px);
+.circle2 {
+    font-size: 40px;
+    font-weight: bold;
+    /* 나중에 작성 */
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+    animation: object-rotate 10s linear infinite;
     transform-style: preserve-3d;
+}
+.cricle2 .word {
+    transform-style: preserve-3d;
+}
+.circle2 span {
+    position: absolute;
+    transform: rotateY(calc(var(--char-index)*5deg)) translateZ(400px);
+    transform-style: preserve-3d;
+    font-size: 20px;
 }
 
-.circle1 span:nth-child(4n) {
-    animation: colorChange1 3s linear infinite alternate;
-}
-.circle1 span:nth-child(4n-1) {
-    animation: colorChange2 3s linear infinite alternate;
-}
-.circle1 span:nth-child(4n-2) {
-    animation: colorChange3 3s linear infinite alternate;
-}
-.circle1 span:nth-child(4n-3) {
-    animation: colorChange4 3s linear infinite alternate;
-}
 
