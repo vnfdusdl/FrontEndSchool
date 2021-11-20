@@ -15,10 +15,7 @@ body {
   font-family: "Noto Sans KR", sans-serif;
   background-color: #eae8fe;
 }
-section {
-  margin: 0 10px;
-  /* margin-top: 248px; */
-}
+
 
 #app {
   display: flex;
@@ -28,23 +25,27 @@ section {
   padding-top: 247px;
   /* flex-wrap을 안 해줬더니 화면크기가 작아져도(심지어 미쿼를 설정해도) 화면이 적용되지 않았음 */
   flex-wrap: wrap;
+  gap: 0 28px;
 }
 
-/* 왜 안 나옴??????? */
-/* 아 sr-only때문에 그랬군 */
-.tit-app img {
+
+.tit-app {
   position: absolute;
-  width: 386px;
-  height: 180px;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  /* z-index: 10; */
+  width: 100%;
+}
+.tit-app img {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 386px;
+  height: 180px;
 }
 
 .vending-machine {
   width: 360px;
-  /* height: 545px; */
   padding: 31px 27px 24px;
   box-sizing: border-box;
   display: flex;
@@ -62,33 +63,24 @@ section {
   content: '';
   display: block;
   position: absolute;
-  /* top:0;
-  left: 0; */
+  /* 쫙 펴지도록!! */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   border: 3px solid #6327fe;
-  width: 88px;
-  height: 125px;
   border-radius: 10px;
 }
 
 .vending-machine .list-item .btn-item {
   position: relative;
   width: 94px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   padding: 10px 11px 9px;
   margin-bottom: 12px;
   overflow: hidden;
 }
-
-
-/* .vending-machine .list-item li:nth-child(1) .btn-item,
-.vending-machine .list-item li:nth-child(5) .btn-item {
-  border: 3px solid #6327fe;
-} */
 
 /* 품절로고 */
 .vending-machine .list-item li:nth-child(2) .btn-item {
@@ -98,10 +90,10 @@ section {
   content: "";
   display: block;
   background-image: url("./resource/img/Sold-out.png");
-  background-size: 60px;
+  background-size: contain;
   background-repeat: no-repeat;
   width: 60px;
-  height: 100px;
+  height: 50px;
   z-index: 10;
   position: absolute;
   top: 40px;
@@ -114,21 +106,23 @@ section {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.8);
   position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .vending-machine .list-item .btn-item .img-item {
   width: 35px;
-  height: 64px;
   margin-bottom: 6px;
 }
 .vending-machine .list-item .btn-item .tit-item {
+  display: block;
   font-size: 9px;
   line-height: 13px;
   margin-bottom: 7px;
 }
 .vending-machine .list-item .btn-item .txt-item {
+  display: block;
   width: 70px;
-  height: 22px;
   box-sizing: border-box;
   padding: 5px 15px;
   background-color: #6327fe;
@@ -287,7 +281,7 @@ section {
 }
 .my-info .cont-myitems {
   width: 360px;
-  padding: 25px 27px 26px;
+  padding: 24px 27px 22px;
   box-sizing: border-box;
   background-color: #fff;
   /* margin-bottom: 6px; */
@@ -352,17 +346,22 @@ section {
 }
 
 /* 미디어쿼리 */
-@media screen and (max-width: 360px) {
+@media screen 
+/* and (min-device-width:320px) */
+and (max-device-width: 360px){
   body {
     background-color: #fff;
+    width: 100%;
   }
   #app {
     flex-direction: column;
-    padding-top: 30px;
+    padding-top: 0;
   }
+  /* .tit-app */
   .tit-app img {
-    width: 166px;
     height: 71px;
+    position: absolute;
+    /* left: 50%; */
   }
   .vending-machine {
     padding-bottom: 16px;
