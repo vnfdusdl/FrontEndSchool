@@ -1,0 +1,14 @@
+.info{
+    $line-normal : 1.34 !global; // 지역변수를 전역변수로 변환, 그러나 사실 쓰이는 일이 별로 없음
+    font-size : 15px;
+    line-height : $line-normal;
+    text-align : right;
+    span{
+        line-height : $line-normal;
+    }
+}
+
+div {
+    color: red;
+    line-height: $line-normal;
+}//error뜸 
