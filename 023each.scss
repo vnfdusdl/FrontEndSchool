@@ -1,0 +1,15 @@
+// Sass - each문
+// color-palette 리스트에 들어있는 색상을 each문을 사용하여 background에 색상값을 넣어준다.
+$color-palette: #dad5d2 #3a3532 #375945 #5b8767 #a6c198 #dbdfc8;
+
+@each $color in $color-palette { //color-palette의 원소를 각각 변수 $color에 선언
+    $i: index($color-palette, $color); //index는 list의 내장함수로, list에서 color가 몇 번째에 있는지를 가지고 옴 
+    .color-circle:nth-child(#{$i}) {
+        background: $color;
+        // 연산을 통해서 들어가는 변수는 그대로 써줘도 됨. 그 값 그대로 들어갈 때는 #{$}써줘야 함
+        font-size: $i*100px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+    }
+}
