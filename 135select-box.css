@@ -18,21 +18,27 @@ button {
     line-height: 16px;
 }
 .btn-select::after {
-    display: inline-block;
+    /* display: inline-block; */
+    float: right;
     content: '';
     width: 12px;
     height: 8px;
     background-image: url(./image/Polygon\ 1.png);
     background-size: 12px 8px;
-    vertical-align:1px
 }
 .list-member {
+    display: none;
     width: 200px;
     font-size: 14px;
     line-height: 16px;
     box-shadow: 4px 4px 14px rgba(0,0,0,0.15);
     border-radius: 10px;
     margin: 4px 0;
+    padding: 5px 8px;
+}
+/* js로 .on 클래스가 있을 때만 나오도록! */
+.btn-select.on + .list-member {
+    display: block;
 }
 .list-member li {
     padding: 7px 10px;
@@ -40,5 +46,5 @@ button {
 .list-member li:hover {
     background-color: #F8E4FF;
     border-radius: 8px;
-    margin: 5px 8px;
 }
+/* 버튼 크기가 조그매서 선택이 안 되는 거였음!! */
