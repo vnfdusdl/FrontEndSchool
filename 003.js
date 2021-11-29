@@ -23,9 +23,15 @@
 // //숫자형 (Number)
 // var num = 10;
 
-// document.write(num, '<br>');  // 10
-// document.write(num/3, '<br>');  // 3.3333..
+// // document.write(num, '<br>');  // 10
+// // document.write(num/3, '<br>');  // 3.3333..
 // document.write(parseInt(num/3), '<br>');  // 3
+// document.write(parseInt('10'),'<br>') //10
+// document.write(parseInt(10),'<br>') //10
+// document.write(parseInt('10.34'),'<br>') //10
+// document.write(parseInt('d10'),'<br>') //NaN
+
+
 
 // /* 숫자형의 사칙연산 */
 // document.write("더하기 : ", 2 + 2.5, '<br>');  // 4.5
@@ -47,46 +53,60 @@
 // // let number = 0o12; //0 ~ 7 -> 10
 // // let number = 0xff; //0 ~ f -> 10
 // // let number = parseInt('13', 10)
-// let number = parseFloat(13.310)
+// let number = parseFloat('13.310');
+// document.write(parseFloat(13.123)+'<br>'); //13.123
+// document.write(parseFloat('13.123')+'<br>'); //13.123
+// document.write(parseFloat('13,1abc23')+'<br>'); //13
+// document.write(parseFloat('13.1abc23')+'<br>'); //13.1
+// document.write(parseFloat('a13.123')+'<br>'); //NaN
 
 // document.write(number, '<br>');
 // document.write(0.1 + 0.2 == 0.3, '<br>');
 // document.write(9999999999999999999, '<br>');
 
+// let s = "Hi, I'm yeon";
+// document.write(s.replace('yeon','yan'));
 
+// let price = '1,000,000';
+// document.write(price.replace(/,/,'')); //1000,000
+// document.write(price.replace(/,/g,'')); //1000000
 
 // Number 관련 함수
-let n = 10000;
-let nFloat = 10000.123123123;
-let s = '10,000,000';
+// let n = 10000;
+// let nFloat = 10000.123123123;
+// let s = '10,000,000';
 
-document.write(`n : ${n} <br>`);
-document.write(`n.toLocaleString() : ${n.toLocaleString()} <br>`);
-document.write(`s : ${s} <br>`);
-document.write(`s.replace(/,/g, '') : ${s.replace(/,/g, '')} <br>`);
-document.write(`parseInt(s, 10) : ${parseInt(s, 10)} <br>`);
+// document.write(`n : ${n} <br>`);
+// document.write(`n.toLocaleString() : ${n.toLocaleString()} <br>`);
+// document.write(`s : ${s} <br>`);
+// document.write(`s.replace(/,/g, '') : ${s.replace(/,/g, '')} <br>`);
+// document.write(`parseInt(s, 10) : ${parseInt(s, 10)} <br>`);
 
-document.write(`n.toFixed(10) : ${n.toFixed(10)} <br>`);
-document.write(`nFloat.toFixed(3) : ${nFloat.toFixed(3)} <br>`);
-document.write(`nFloat.toExponential(4) : ${nFloat.toExponential(4)} <br>`);
+// document.write(`n.toFixed(10) : ${n.toFixed(10)} <br>`);
+// document.write(`nFloat.toFixed(3) : ${nFloat.toFixed(3)} <br>`);
+// document.write(`nFloat.toExponential(4) : ${nFloat.toExponential(4)} <br>`);
 
-document.write(`Number(true) : ${Number(true)} <br>`);
-document.write("Number(true) : "+ Number(true) + "<br>");
+// document.write(`Number(true) : ${Number(true)} <br>`);
+// document.write("Number(true) : "+ Number(true) + "<br>");
 
-document.write(`Number(false) : ${Number(false)} <br>`);
-document.write(`Number('') : ${Number('')} <br>`);
-document.write(`Number(' ') : ${Number(' ')} <br>`);
-document.write(`Number('hello') : ${Number('hello')} <br>`);
-document.write(`Number('10 20') : ${Number('10 20')} <br>`);
-document.write(`Number('10     ') : ${Number('10     ')} <br>`);
-document.write(`Number('     10') : ${Number('     10')} <br>`);
-document.write(`Number('     10     ') : ${Number('     10     ')} <br>`);
+// document.write(`Number(false) : ${Number(false)} <br>`);
+// document.write(`Number('') : ${Number('')} <br>`);
+// document.write(`Number(' ') : ${Number(' ')} <br>`);
+// document.write(`Number('hello') : ${Number('hello')} <br>`);
+// document.write(`Number('10 20') : ${Number('10 20')} <br>`);
+// document.write(`Number('10     ') : ${Number('10     ')} <br>`);
+// document.write(`Number('     10') : ${Number('     10')} <br>`);
+// document.write(`Number('     10     ') : ${Number('     10     ')} <br>`);
 
-document.write(`Math.PI : ${Math.PI} <br>`);
-document.write(`Math.round(4.7) : ${Math.round(4.7)} <br>`);
-document.write(`Math.pow(2, 8) : ${Math.pow(2, 8)} <br>`);
-document.write(`Math.sqrt(64) : ${Math.sqrt(64)} <br>`);
-document.write(`Math.abs(-5) : ${Math.abs(-5)} <br>`);
-document.write(`Math.random() : ${Math.random()*10} <br>`);
-document.write(`Math.max(10, 20, 30, 40, 50) : ${Math.max(10, 20, 30, 40, 50)} <br>`);
-document.write(`Math.min(10, 20, 30, 40, 50) : ${Math.min(10, 20, 30, 40, 50)} <br>`);
+// document.write(`Math.PI : ${Math.PI} <br>`);
+// document.write(`Math.round(4.7) : ${Math.round(4.7)} <br>`);
+// document.write(`Math.pow(2, 8) : ${Math.pow(2, 8)} <br>`);
+// document.write(`Math.sqrt(64) : ${Math.sqrt(64)} <br>`);
+// document.write(`Math.abs(-5) : ${Math.abs(-5)} <br>`);
+// document.write(`Math.random() : ${Math.random()*10} <br>`);
+// document.write(`Math.max(10, 20, 30, 40, 50) : ${Math.max(10, 20, 30, 40, 50)} <br>`);
+// document.write(`Math.min(10, 20, 30, 40, 50) : ${Math.min(10, 20, 30, 40, 50)} <br>`);
+
+let price = 1000;
+document.write(`${price}원<br>`);
+document.write(price+'원'+'<br>');
