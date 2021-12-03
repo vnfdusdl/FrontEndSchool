@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>화면색깔 바꾸기</title>
+    <style>
+        div {
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+            background-color: lightgreen;
+            border-radius: 50%;
+        }
+        section {
+            width: 400px;
+            margin: 30px auto;
+            text-align: center;
+        }
+        .pink {
+            background-color: lightpink;
+        }
+        .yellow {
+            background-color: khaki;
+        }
+        .sky {
+            background-color: lightskyblue;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <section>
+        <button class="btn-pink">분홍색</button>
+        <button class="btn-yellow">노란색</button>
+        <button class="btn-sky">하늘색</button>
+    </section>
+    <script>
+        const colorScreen = document.querySelector('div')
+        const btnPink = document.querySelector('.btn-pink');
+        const btnYellow = document.querySelector('.btn-yellow');
+        const btnSky = document.querySelector('.btn-sky');
+        
+        btnPink.addEventListener('click',function(){
+            colorScreen.classList.add('pink');
+            colorScreen.classList.remove('yellow','sky');
+        })
+
+        btnYellow.addEventListener('click',function(){
+            colorScreen.classList.add('yellow');
+            colorScreen.classList.remove('pink','sky');
+        })
+
+        btnSky.addEventListener('click',function(){
+            colorScreen.classList.add('sky');
+            colorScreen.classList.remove('pink','yellow');
+        })
+    </script>
+</body>
+</html>
