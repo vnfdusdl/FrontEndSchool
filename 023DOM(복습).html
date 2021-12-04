@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>DOM 연습</title>
+        <style>
+            ul {
+                display: flex;
+                width: 300px;
+                justify-content: space-between;
+                margin: 50px auto;
+                padding: 0;
+            }
+            li {
+                list-style: none;
+            }
+            .circle {
+                width: 300px;
+                height: 300px;
+                border-radius: 50%;
+                background-color: lightgray;
+                margin: 0 auto;
+            }
+            .circle.pink {
+                background-color: lightpink;
+            }
+            .circle.yellow {
+                background-color: lightyellow;
+            }
+            .circle.green {
+                background-color: lightgreen;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="circle"></div>
+        <ul>
+            <li><button type="button" class="btn-pink">분홍색</button></li>
+            <li><button type="button" class="btn-yellow">노란색</button></li>
+            <li><button type="button" class="btn-green">초록색</button></li>
+        </ul>
+        <script>
+            const circle = document.querySelector('.circle');
+            const btnPink = document.querySelector('.btn-pink');
+            const btnYellow = document.querySelector('.btn-yellow');
+            const btnGreen = document.querySelector('.btn-green');
+
+            //버튼을 하나의 array에 담음
+            let btnArr = [btnPink, btnYellow, btnGreen];
+            // btnArr에 있는 모든 요소를 하나하나 메서드로 처리해줄 것
+            btnArr.forEach(item => {
+                //그 메서드는 버튼을 클릭했을 때 이벤트를 주는 메서드인데 어떤 이벤트를 줄지도 함수로!
+                item.addEventListener('click', function() {
+                    //모든 색깔 class를 지워주고,
+                    circle.classList.remove('pink', 'yellow', 'green');
+                    //요소의 className에 따라서 circle에 클래스를 붙여줌.
+                    if (item.className === 'btn-pink') {
+                        circle.classList.add('pink');
+                    } else if (item.className === 'btn-yellow') {
+                        circle.classList.add('yellow');
+                    } else {
+                        circle.classList.add('green');
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>

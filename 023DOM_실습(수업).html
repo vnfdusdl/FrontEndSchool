@@ -46,32 +46,25 @@
             const btnYellow = document.querySelector('.btn-yellow');
             const btnGreen = document.querySelector('.btn-green');
 
-            //버튼을 제어하는 const를 하나의 array에 담음 
+            //버튼을 제어하는 const를 하나의 array에 담음
             let btnArr = [btnRed, btnYellow, btnGreen];
             // btnArr에 있는 모든 요소를 하나하나 메서드로 처리해줄 것
             btnArr.forEach((item) => {
-                //그 메서드는 버튼을 클릭했을 때 이벤트를 주는 메서드인데 어떤 이벤트를 줄지도 함수로! 
+                //그 메서드는 버튼을 클릭했을 때 이벤트를 주는 메서드인데 어떤 이벤트를 줄지도 함수로!
                 item.addEventListener('click', () => {
-                //일단, 모든 색깔 class를 지워주고, 
-                canvas.classList.remove('red', 'yellow', 'green');
-                // classList.remove는 ''라고 하면 모든 클래스를 삭제함 
-                //이 className에 따라서 canvas에 클래스를 붙여줌.
-                if(item.className === 'btn-red') {
-                    canvas.classList.add('red');
-                }
-                else if(item.className === 'btn-yellow') {
-                    canvas.classList.add('yellow');
-                }
-                else {
-                    canvas.classList.add('green');
-                }
+                    //일단, 모든 색깔 class를 지워주고,
+                    canvas.classList.remove('red', 'yellow', 'green');
+                    // classList.remove는 ''라고 하면 모든 클래스를 삭제함
+                    //이 className에 따라서 canvas에 클래스를 붙여줌.
+                    if (item.className === 'btn-red') {
+                        canvas.classList.add('red');
+                    } else if (item.className === 'btn-yellow') {
+                        canvas.classList.add('yellow');
+                    } else {
+                        canvas.classList.add('green');
+                    }
+                });
             });
-            });
-
-
-
-
-
         </script>
     </body>
 </html>

@@ -1,3 +1,6 @@
+//랜덤한 숫자 출력하기
+Math.random(); // 0이상 1미만의 숫자를 랜덤하게 뽑음 
+
 // 1~45번, 중복 안됨, 6개의 숫자
 function randomNum(min, max) {
     return Math.floor(Math.random() * (max - min) + min);
@@ -33,7 +36,7 @@ function lotto() {
 }
 lotto();
 
-//삼항연산자..
+// 삼항연산자..
 // 안 걸러지네... -> 다시 수정해보자
 function randomNum() {
     return Math.floor(Math.random() * 45 + 1);
@@ -41,46 +44,84 @@ function randomNum() {
 function lotto() {
     let result = [];
     while (result.length < 6) {
-        let getNumber = randomNum()
-        result.includes(getNumber)? result = result : result.push(randomNum());
-    }
-    return result;
-}
-lotto();
-
-//얘도 아니야
-function randomNum() {
-    return Math.floor(Math.random() * 45 + 1);
-}
-function lotto() {
-    let result = [];
-    while (result.length < 6) {
         let getNumber = randomNum();
-        if (result.includes(randomNum())) {
-            result = result;
-        } else {
-            result.push(randomNum());
+        result.includes(getNumber)
+            ? (result = result)
+            : result.push(randomNum());
+    }
+    return result;
+}
+lotto();
+
+//while이랑 includes로
+//됐다!!!!!!
+function randomNum(min, max) {
+    return Math.floor(Math.random() * (max - min) + min);
+}
+function lotto() {
+    let result = [];
+    while (result.length < 6) {
+        let getNumber = randomNum(46, 1);
+        if (!result.includes(getNumber)) {
+            result.push(getNumber);
         }
     }
     return result;
 }
 lotto();
 
-//얘는 왜 안돌아가지
+//얘는 왜 안돌아가지 ????
+function randomNum(max, min) {
+    return Math.floor(Math.random() * (max - min) + min);
+}
 function lotto() {
     let result = [];
     while (result.length < 6) {
-        function randomNum() {
-            return Math.floor(Math.random() * 45 + 1);
-        }
-        result.forEach(x => {
-            if (x !== randomNum()) {
-                result.push(randomNum());
+        let getNumber = randomNum(46, 1);
+        result.forEach((x) => {
+            if (x !== getNumber) {
+                result.push(getNumber);
             }
         });
-    }
+    }  
     return result;
 }
 lotto();
 
-//
+
+//forEach는 이렇게 써줘야 하는 건가??
+function randomNum(max, min) {
+    return Math.floor(Math.random() * (max - min) + min);
+}
+function lotto() {
+    let result = [];
+    while( result.length < 6) {
+        let getNumber = randomNum(46,1);
+        let sameNumber = false;
+        result.forEach(x => {
+            if(x === getNumber){
+                sameNumber = true;
+            }
+        })
+        if (!sameNumber) {
+            result.push(getNumber);
+        }
+    }
+    return result
+}
+lotto();
+
+
+//Set으로 해보자!!
+function randomNum(max, min) {
+    return Math.floor(Math.random() * (max - min) + min);
+}
+function lotto() {
+    let lottoSet = new Set();
+    while (lottoSet.size < 6) {
+        let getNumber = randomNum(46, 1);
+        lottoSet.add(getNumber);
+    }
+    return lottoSet
+}
+lotto();
