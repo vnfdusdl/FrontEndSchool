@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>JQuery</title>
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"
+        ></script>
+        <script>
+            // 문서가 다 준비되면 실행!
+            $(function () {
+                // 이것을 주석처리하면 실행이 안됩니다. html이 다 로드되지 않은 상태이기 때문에 그렇습니다.
+                $('.box').fadeOut(3000).fadeIn(3000);
+            });
+        </script>
+        <style>
+            .box {
+                width: 200px;
+                height: 200px;
+                background-color: palevioletred;
+            }
+            .box2 {
+                width: 100px;
+                height: 100px;
+                opacity: 0.3;
+                background-color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id="one">jQuery 실습</h1>
+        <p>hello</p>
+        <button class="btn1">클릭하세요</button>
+        <p class="실습">제이쿼리 실습중이에요!</p>
+        <img />
+        <br />
+        <textarea name="메모장" id="메모장" cols="30" rows="10"></textarea>
+        <button class="btn2">메모장 내용 경고창으로 출력</button>
+        <p id="p3">hello world</p>
+        <!-- 
+        1. items 부모를 찾아 backgroundColor를 파란색으로 바꾸기
+        2. items 2번째 color를 빨간색으로 바꾸기
+        3. ul2의 자식인 li 요소를 선택하여 1번부터 3번까지 color를 
+        초록색으로 바꾸기
+        4. ul2의 자식인 li요소를 선택하여 7번부터 10번까지 color를
+        파란색으로, backgroundColor를 빨간색으로
+     -->
+        <div class="wrapper">
+            <h1 class="title">TITLE</h1>
+            <ul>
+                <li class="items">item 1</li>
+                <li class="items">item 2</li>
+                <li class="items">item 3</li>
+            </ul>
+        </div>
+        <ul class="ul2">
+            <li>hello~~</li>
+            <li>hello~~</li>
+            <li>hello~~</li>
+            <li>hello~~</li>
+            <li>hello~~</li>
+            <li>hello~~</li>
+            <li>hello~~</li>
+            <li>hello~~</li>
+            <li>hello~~</li>
+            <li>hello~~</li>
+        </ul>
+        <div id="world">hello world</div>
+        <div class="one blue">hihi</div>
+        <div class="two blue">hi~</div>
+        <p class="blue">hi world</p>
+        <div class="three">hi!!!</div>
+        <div class="three blue">hi!!!</div>
+        <div class="box"></div>
+        <button class="btn3">Click Me!!</button>
+        <div class="box2"></div>
+        <script>
+            // document.getElementById('one').innerHTML = '!!!';
+            $('#one').text('Hello jQery');
+            // $('p').hide(); //display: none;이 됨.
+            $('.btn1').click(function () {
+                alert('클릭하지마!');
+            });
+            // $('.실습').text('실습중이에요!');
+            // $('.실습').text('<strong>실습중이에요!</strong>');
+            $('.실습').html('<strong>실습중이에요!</strong>');
+            $('.실습').css('color', 'red');
+            // css부분은 카멜표기법을 따릅니다
+            $('img').attr('src', 'a.jpg');
+            $('img')
+                .attr('data-name', '프로필')
+                .attr('data-hello', 'hello-world');
+            $('.btn2').click(function () {
+                let 메모장값 = $('#메모장').val();
+                $('#메모장').val('값을 입력하세요');
+                alert(메모장값);
+            });
+            $('#p3').css('color', 'red').css('backgroundColor', 'blue');
+
+            // 문제 1번
+            $('.items').parent().css('backgroundColor', 'blue');
+            //문제 2번
+            // $('.items:nth-child(2)').css('color','red');
+            $('.items').eq(1).css('color', 'red');
+            //문제 3번,, 이거 한 번에 어떻게 쓰지
+            // $('.ul2').children('li:nth-child(1)').css('color','green');
+            // $('.ul2').children('li:nth-child(2)').css('color','green');
+            // $('.ul2').children('li:nth-child(3)').css('color','green');
+            $('.ul').children('li:lt(3)').css('color', 'green');
+            //이렇게도 됨
+            $('.ul2 :nth-child(-n+3)').css('color', 'green');
+            //문제 4번
+            // $('.ul2').children('li:nth-child(7)').css('color','blue').css('backgroundColor','red');
+            // $('.ul2').children('li:nth-child(8)').css('color','blue').css('backgroundColor','red');
+            // $('.ul2').children('li:nth-child(9)').css('color','blue').css('backgroundColor','red');
+            // $('.ul2').children('li:nth-child(10)').css('color','blue').css('backgroundColor','red');
+            $('.ul').children('li:gt(5)').css('color', 'red');
+            $('ul2').append('<li>Some appended text.<li>');
+            $('ul2').prepend('<li>Some prepended text.<li>');
+            $('ul2').after('<h2>시작<h2>');
+            // $('#world').remove();
+            $('#world').addClass('important');
+            $('.one, .two, p').removeClass('blue');
+            $('.three').toggleClass('blue');
+            $('.box').fadeIn(3000).fadeOut(3000);
+            // https://electronic-moongchi.tistory.com/75
+            // $('.box').click(function(){
+            //     $(this).stop();
+            // })
+            // div 클릭했을 때 안 보이게 하기
+            // dom이 준비되면 실행해라!
+            $(function () {
+                $('.box').click(function () {
+                    $(this).hide();
+                });
+            });
+            $('.btn3').click(function () {
+                $('.box2').animate(
+                    {
+                        width: '300px',
+                        height: '300px',
+                        opacity: 1,
+                    },
+                    'slow'
+                );
+            });
+            //hover - 색 변경하기
+            $('.box2').hover(
+                function () {
+                    $(this).css('background-color', 'yellow');
+                },
+                //벗어났을 때 색깔
+                function () {
+                    $(this).css('background-color', 'blue');
+                }
+            );
+            $('.box2').mouseenter(function () {
+                alert('You entered p1!');
+            });
+            $('.box2').mouseleave(function () {
+                alert('Bye! You now leaved p1!');
+            });
+        </script>
+    </body>
+</html>
