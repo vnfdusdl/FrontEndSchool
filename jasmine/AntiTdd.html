@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        article {
+            display: inline-block;
+            border: 3px solid black;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        .viewer {
+            display: block;
+            font-size: 24px;
+            color: green;
+            margin: 50px 0 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- 코드의 안 좋은 점
+    1. button  에 onclick이 사용되어 있다. -> 서로 다른 언어가 섞여있다.
+    2. txt라는 변수가 전역에 있다. 
+    3. 함수가 아닌 것은 테스트가 할 수 없다. -> const viewer =  여기 부분.. 
+    4. 함수는 재사용성이 있어야하는데, function puch()는 안에 너무 하드 코딩 되어있다.(input 하나만을 위한 함수) 그래서 재사용성이 떨어진다. 
+    그래서 결국 테스트 불가
+    => 테스트를 하기 위한 조건 ) 
+    1. 코드를 UI에서 완전히 분리한다.
+    2. 자바스크립트를 JS 파일로 분리한다.
+    3. 모든 기능은 함수로 구현한다. 
+    -->
+    <article>
+        <strong class="viewer"></strong>
+        <input type="text" class="inp-txt">
+        <button class="btn-push" onclick="push()">적용</button>
+    </article>
+    
+    <script>
+        let txt = 'Hello Lions';
+
+        const viewer = document.querySelector('.viewer');
+        viewer.textContent = txt;
+
+        function push() {
+            const inpTxt = document.querySelector('.inp-txt');
+            viewer.textContent = inpTxt.value;
+        }
+    </script>
+</body>
+</html>
