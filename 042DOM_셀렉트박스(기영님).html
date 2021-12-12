@@ -101,7 +101,7 @@
             <li><button type="button">C/C++</button></li> -->
         </ul>
     <script>
-         const selectBtn = document.querySelector(".btn-select");
+            const selectBtn = document.querySelector(".btn-select");
             const list = document.querySelector(".list-member");
             const lang = ["Python", "Java", "JavaScript", "C#", "C/C++"];
             for (const s of lang) {
@@ -117,7 +117,9 @@
             //이벤트 위임
             list.addEventListener("click", (e) => {
                 //innerText보다는 textConent로 만들기.
+                //target의 innerText를 selectBtn의 innerText로! 
                 selectBtn.innerText = e.target.innerText;
+                //그리고 항목을 선택 했으니까, on을 제거해줘서 리스트가 사라지도록! 
                 selectBtn.classList.remove("on");
             });
     </script>

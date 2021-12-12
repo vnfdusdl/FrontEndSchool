@@ -27,10 +27,10 @@
             //     console.log(myP.textContent);
             // });
 
-            // input 요소에 'input' 이벤트를 연결하면 실시간으로 값이 반영되게 만들 수도 있습니다.
-            // myInput.addEventListener('input', () => {
-            //     myP.textContent = myInput.value;
-            // });
+            //input 요소에 'input' 이벤트를 연결하면 실시간으로 값이 반영되게 만들 수도 있습니다.
+            myInput.addEventListener('input', () => {
+                myP.textContent = myInput.value;
+            });
 
             // myP.textContent = "<strong>I'm Strong!!</strong>";
             
@@ -39,10 +39,10 @@
             //text만 넣어줄 때는 innerHTML 사용하지말기 훨신 빠름
             // myP.innerHTML = "I'm Strong!!";
             //클래스도 넣을 수 있음
-            myP.innerHTML = "<strong class='txt-strong'> I'm Strong!! </strong>";
+            // myP.innerHTML = "<strong class='txt-strong'> I'm Strong!! </strong>";
 
             // myP.innerText = "I'm Strong!!";
-            // myP.innerText = "<strong>I'm Strong!!</strong>";
+            myP.innerText = "<strong>I'm Strong!!</strong>";
             // myP.outerHTML = '<div></div>';
         </script>
     </body>

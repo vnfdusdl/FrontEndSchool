@@ -105,16 +105,24 @@
     <script>
         const btnSelct = document.querySelector('.btn-select');
         const selectUl = document.querySelector('ul');
-        selectUl.innerHTML = '<li><button>HTML</button></li><li><button>CSS</button></li><li><button>JavaScript</button></li><li><button>C#</button></li>'
-        const selectLi = document.createElement('li');
-        const listBtn = document.createElement('button');
-        let btnActive = true;
-        btnSelct.addEventListener('click',function(){
-            if(btnActive) {
-                selectUl.classList.add('on');
-                btnActive = false;
-            } else {
-                btnActive = true;
+        const arrLang = ['Python', 'Java', 'JavaScript', 'C#', 'C/C++'];
+        
+        arrLang.forEach(lang => {
+            const li = document.createElement('li');
+            const btn = document.createElement('button');
+            btn.setAttribute('type','button');
+            btn.textContent = lang;
+            selectUl.appendChild(li).appendChild(btn);
+        });
+
+        btnSelct.addEventListener('click', () => {
+            btnSelct.classList.toggle('on');
+        });
+
+        selectUl.addEventListener('click', (event) => {
+            if (event.target.nodeName === 'BUTTON'){
+                btnSelct.textContent = event.target.textContent;
+                btnSelct.classList.remove('on');
             }
         });
     </script>
