@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <h1>hello sop!</h1>
+    <iframe src="http://naver.com" frameborder="0"></iframe>
+    <iframe class="youtube" width="1424" height="652" src="https://www.youtube.com/embed/5tQeSeyUQL0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe class="sameOrigin" src="sameOrigin.html" frameborder="0"></iframe>
+    <script>
+        const pageOther = document.querySelector('.youtube');
+        const pageSame = document.querySelector('.sameOrigin');
+
+        pageOther.onload = function() {
+            console.log('pageOther :',pageOther.contentDocument); //null, sop 정책때문에!
+        }
+        pageSame.onload = function() {
+            console.log('pageSame :', pageSame.contentDocument);
+            pageSame.contentDocument.body.style.backgroundColor = "red"; // 같은 페이지면 DOM에 접근하는 것도 가능하다. 
+        }
+        //이렇게만 안 하면, sameOrigin에서도 제대로 안 나옴. -> 페이지 로딩이 다 되기 전에 script가 실행되어서
+
+
+
+    </script>
+</body>
+</html>
