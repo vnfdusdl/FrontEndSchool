@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Private variables</title>
+</head>
+<body>
+    <script>
+        function movie_title(title){
+            return {
+                get_title : function(){
+                    return title;
+                },
+                set_title : function(_title){
+                    title=_title
+                }
+            }
+        }
+        var sunny = movie_title('Sunny');
+        var windy = movie_title('Windy');
+
+        alert(sunny.get_title());
+        alert(windy.get_title());
+
+        windy.set_title('Cloudy');
+        alert(windy.get_title())
+    </script>
+</body>
+</html>
