@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>btn 정리</title>
+    <style>
+        div {
+            width: 200px;
+            height: 50px;
+            background-color: coral;
+            border: 2px solid black;
+            border-radius: 15px;
+            margin-bottom: 50px;
+            transition: all 1s;
+            color: white;
+            text-align: center;
+            font-weight: bold;
+            font-size: 32px;
+            /* 나중에 가상요소를 주기 위함 */
+            position: relative;
+            overflow: hidden;
+        }
+        /* translate, translateX, translateY, rotate, skew, scale */
+        .c1:hover {
+            transform: translateX(100px);
+            transition-timing-function: ease;
+        }
+        /* ease-in, ease-out, ease-in-out은 자주 쓰지 않는다.  */
+        .c2:hover {
+            transform: translateX(100px);
+            transition-timing-function: linear;
+        }
+        .c3:hover {
+            background-color: violet;
+
+        }
+        .c4:hover {
+            background-color: violet;
+            color: black;
+        }
+        .c5:hover {
+            background-color: violet;
+            color: black;
+            transform: scaleY(1.2);
+        }
+        .c6:hover {
+            width: 1000px;
+            height: 100px;
+        }
+        .c7:hover {
+            letter-spacing: 20px;
+            width: 500px;
+        }
+        .c8:hover {
+            opacity: 0.3;
+        }
+        .c9:hover {
+            border-color: hotpink;
+            border-width: 20px;
+        }
+        .c10:hover {
+            transform: rotate(20deg);
+        }
+        .c11:hover {
+            transform: rotate(20deg);
+            transform-origin: 50% 0;
+        }
+        .c12:hover {
+            transform: rotate(20deg);
+            transform-origin: 100% 50%;
+        }
+        .c13:hover {
+            transform: rotate(20deg);
+            transform-origin: 0% 50%;
+        }
+        .c14:hover {
+            transform: rotate(20deg);
+            transform-origin: 50% 100%;
+        }
+        /* 실전예제 1 */
+        .c15::before {
+            content: '';
+            display: block;
+            position: absolute;
+            background-color: white;
+            width: 200px;
+            height: 5px;
+            bottom:0;
+            
+            /* width,height를 주지 않고도, 상하좌우 0을 주면 쫙 펼쳐지게 됨 */
+            /* top:0;
+            left:0;
+            right: 0;
+            bottom: 0; */
+            transform: translateX(-300px);
+            transition: all 1s ease;
+        }
+        .c15:hover::before {
+            transform: translateX(0);
+        }
+        /* 실전예제2 */
+        .c16::before {
+            content: '';
+            display: block;
+            position: absolute;
+            background-color: white;
+            width: 200px;
+            height: 5px;
+            bottom:0;
+            transform: translateX(-300px);
+            transition: all 1s ease;
+        }
+        .c16:hover::before {
+            transform: translateX(0);
+        }
+        .c16:after {
+            content:'';
+            display: block;
+            position: absolute;
+            background-color: white;
+            width: 200px;
+            height: 5px;
+            top:0;
+            transform: translateX(300px);
+            transition: all 1s ease;
+        }
+        .c16:hover::after {
+            transform: translateX(0)
+        }
+        /* 실전예제 3 */
+        .c17:before {
+            content: '';
+            position: absolute;
+            top:0;
+            left:0;
+            width: 100%;
+            height: 100%;
+            background-color: yellowgreen;
+            transition: all .5s;
+            /* 두께가 없는 면이 세로로 서있는 모양-> 눈에 안 보임 */
+            transform: rotateX(90deg);
+            /* z-index: -1; */
+        }
+        .c17:hover::before {
+            transform: rotateX(0);
+            z-index: -1;
+        }
+        .c17:after{
+            content: '';
+            position: absolute;
+            top:0;
+            left:0;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            transition: all .5s;
+            transform: rotateY(90deg);
+            /* z-index: -1; */
+        }
+        .c17:hover::after {
+            transform: rotateY(0);
+            z-index:-1;
+        }
+        .c17:hover {
+            color:tomato;
+            /* 글자 보이게 하려고..! */
+            z-index: 1;
+        }
+        /* 실전예제 4 */
+        .c18::before {
+            content: 'hello world';
+            color:white;
+            background-color: black;
+            display: block;
+            top:0;
+            left:0;
+            width: 100%;
+            height: 100%;
+            transform: translateY(100%);
+            transition: all 1s ease;
+            /* 이게 없으면 up글자가 안 보임 */
+            position: absolute;
+        }
+        .c18:hover::before {
+            transform: translateY(0)
+        }
+
+    </style>
+</head>
+<body>
+    <div class="c1">ease</div>
+    <div class="c2">linear</div>
+    <div class="c3">background</div>
+    <div class="c4">color</div>
+    <div class="c5">scale</div>
+    <div class="c6">size</div>
+    <div class="c7">letter-space</div>
+    <div class="c8">opacity</div>
+    <div class="c9">border</div>
+    <div class="c10">rotate</div>
+    <div class="c11">top</div>
+    <div class="c12">right</div>
+    <div class="c13">left</div>
+    <div class="c14">bottom</div>
+    <div class="c15">가상요소1개</div>
+    <div class="c16">가상요소2개</div>
+    <div class="c17">rotate(90)</div>
+    <div class="c18">up</div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내가 만든 btn2</title>
+    <style>
+        body {
+            margin: 50px;
+            background-color: skyblue;
+        }
+        .btn {
+            color: white;
+            font-size: 32px;
+            font-weight: bold;
+            width: 200px;
+            height: 50px;
+            padding: 10px 0px;
+            border: 1px solid skyblue;
+            text-align: center;
+            line-height: 50px;
+            position: relative;
+            overflow: hidden;
+            transition: all 1s ease;
+        }
+        .btn:hover {
+            color: skyblue;
+            z-index: 1;
+        }
+        .btn::before {
+            display: block;
+            content: '살려';
+            width: 100px;
+            height: 70px;
+            color: skyblue;
+            background-color: white;
+            position: absolute;
+            text-align:right;
+            line-height: 70px;
+            top: 0;
+            transform: translateX(-250px);
+            transition: all 1s ease;
+        }
+        .btn:hover::before {
+            transform: translateX(0px);
+        }
+        .btn::after {
+            display: block;
+            content: '줘😭';
+            width: 100px;
+            height: 70px;
+            color: skyblue;
+            background-color: white;
+            position: absolute;
+            text-align: left;
+            line-height: 70px;
+            top: 0;
+            left:0;
+            transform: translateX(250px);
+            transition: all 1s ease;
+        }
+        .btn:hover::after {
+            transform: translateX(100px);
+        }
+    </style>
+</head>
+<body>
+    <div class="btn">Hover me!</div>
+</body>
+</html>

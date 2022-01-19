@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>building</title>
+  </head>
+  <body>
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <style>
+          @keyframes hojun {
+            from {
+              background-position: 0px, 0px;
+            }
+            to {
+              background-position: -3730px, 0;
+            }
+          }
+          .building1 {
+            width: 110px;
+            height: 180px;
+            background: url('building1.png') no-repeat;
+            /* step이라는 값이 딱딱 끊기도록 보여주는 거기때문에 올라가는 거처럼 보인다. */
+            animation: hojun 5s steps(33);
+            /* 마지막 이미지가 유지되는 속성 */
+            animation-fill-mode: forwards;
+          }
+        </style>
+      </head>
+      <body>
+        <div class="building1"></div>
+      </body>
+    </html>
+  </body>
+</html>
