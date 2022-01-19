@@ -1,0 +1,266 @@
+@charset "utf-8";
+
+/* 로그인 팝업창 */
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+@font-face {
+  font-family: "SpoqaHanSansNeo-Regular";
+  src: url(./SpoqaHanSansNeo_TTF_original/SpoqaHanSansNeo_TTF_original/SpoqaHanSansNeo-Regular.ttf);
+}
+@font-face {
+  font-family: "SpoqaHanSansNeo-Medium";
+  src: url(./SpoqaHanSansNeo_TTF_original/SpoqaHanSansNeo_TTF_original/SpoqaHanSansNeo-Medium.ttf);
+}
+.sr-only {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1 px;
+  height: 1 px;
+  margin: -1 px;
+  overflow: hidden;
+}
+
+#login {
+  width: 500px;
+  height: 240px;
+  border: 1px solid #c4c4c4;
+  box-sizing: border-box;
+  border-radius: 5px;
+  text-align: center;
+  padding: 30px;
+  margin: 50px auto;
+  font-family: "SpoqaHanSansNeo-Regular";
+}
+.logo-img {
+  width: 128px;
+  height: 40px;
+  margin-bottom: 28px;
+}
+.login-txt {
+  line-height: 20px;
+  margin-bottom: 32px;
+}
+.login-go-btn {
+  text-decoration: none;
+  color: #fff;
+  font-size: 22px;
+  line-height: 28px;
+  font-family: "SpoqaHanSansNeo-Medium";
+  padding: 17px 180px;
+  background-color: #2f80ed;
+  width: 440px;
+  height: 60px;
+  border-radius: 5px;
+}
+
+/* 로그인 모달창 */
+#container {
+  width: 520px;
+  border: 1px solid #c4c4c4;
+  box-sizing: border-box;
+  border-radius: 10px;
+  text-align: center;
+  margin: 50px auto;
+  padding: 20px 24px 25px;
+  font-family: "SpoqaHanSansNeo-Regular";
+}
+
+.login-header {
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  margin-bottom: 38px;
+}
+.login-header .login-header-txt {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: bold;
+}
+.login-header .close-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: none;
+  border: none;
+}
+.login-header .close-btn img {
+  width: 16px;
+  height: 16px;
+}
+.login-header::after {
+  content: "";
+  display: block;
+  width: 520px;
+  height: 1px;
+  background-color: #c4c4c4;
+  position: absolute;
+  top: 33px;
+  left: -25px;
+}
+.login-main .login-main-txt {
+  text-align: left;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: bold;
+  margin-bottom: 24px;
+}
+.login-form .input-id,
+.login-form .input-pw {
+  width: 472px;
+  height: 50px;
+  border-radius: 5px;
+  padding: 15px 16px;
+  box-sizing: border-box;
+  border: 1px solid #c4c4c4;
+}
+.login-form .input-id:focus,
+.login-form .input-pw:focus {
+  outline: none;
+  border: 3px solid #f4492f;
+}
+.login-form .input-id {
+  margin-bottom: 6px;
+}
+.login-form .input-pw {
+  margin-bottom: 10px;
+}
+.login-form .is-alarm {
+  text-align: left;
+  font-size: 14px;
+  line-height: 18px;
+  color: #f4492e;
+  margin: 0 0 10px 4px;
+}
+
+.login-form .login-stay-txt {
+  display: inline-block;
+  margin-bottom: 21px;
+  font-size: 16px;
+  line-height: 20px;
+  font-family: "SpoqaHanSansNeo-Medium";
+  color: #767676;
+  width: 100%;
+  text-align: left;
+}
+.login-form .login-stay-txt::before {
+  content: '';
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  background-image: url(./uncheck-point.png);
+  background-size: 22px 22px;
+  background-repeat: no-repeat;
+  vertical-align: -5px;
+  margin:0 8px 0 4px;
+}
+.login-form .login-stay-checkbox:checked + .login-stay-txt::before {
+  content: '';
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  background-image: url(./check-point.png);
+  background-size: 22px 22px;
+  background-repeat: no-repeat;
+  vertical-align: -5px;
+  margin:0 8px 0 4px;
+} 
+.login-form .login-btn {
+  width: 472px;
+  height: 50px;
+  border-radius: 5px;
+  border: none;
+  background-color: #2f80ed;
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 20px;
+}
+.login-form .go-join,
+.login-form .go-find {
+  display: inline-block;
+  font-size: 14px;
+  line-height: 17px;
+  color: #767676;
+  margin-bottom: 30px;
+}
+.login-form .go-join::after {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 14px;
+  background-color: #767676;
+  vertical-align: -2px;
+  margin: 0 12px;
+}
+.login-with-txt {
+  display: inline-block;
+  font-size: 14px;
+  height: 18px;
+  color: #767676;
+  margin-bottom: 20px;
+}
+.login-with-txt::before,
+.login-with-txt::after {
+  content: "";
+  display: inline-block;
+  width: 210px;
+  height: 1px;
+  background-color: #c4c4c4;
+  vertical-align: middle;
+}
+.login-with-txt::before {
+  margin-right: 12px;
+}
+.login-with-txt::after {
+  margin-left: 12px;
+}
+.login-with-btn {
+  display: inline-block;
+  position: relative;
+  width: 472px;
+  height: 50px;
+  border: 1px solid #767676;
+  border-radius: 5px;
+  padding: 15px 0;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  line-height: 20px;
+  color: #767676;
+  font-family: "SpoqaHanSansNeo-Medium";
+}
+.login-with-btn::before {
+  content: "";
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  position: absolute;
+  left: 15px;
+  top: 11px;
+  background-size: 28px;
+  height: 28px;
+}
+.login-with-google {
+  border-color: #767676;
+}
+.login-with-google::before {
+  background-image: url(./Google__G__Logo\ 1.png);
+}
+.login-with-facebook {
+  border-color: #2d9cdb;
+}
+.login-with-facebook::before {
+  background-image: url(./facebook.png);
+}
+.login-with-naver {
+  border-color: #00bf18;
+}
+.login-with-naver::before {
+  background-image: url(./naver-logo.png);
+}
+.login-with-kakao {
+  border-color: #f2c94c;
+  margin-bottom: 0;
+}
+.login-with-kakao::before {
+  background-image: url(./kakao-logo.png);
+}
