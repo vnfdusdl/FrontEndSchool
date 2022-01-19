@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyCharacter</title>
+    <style>
+        .character {
+            margin-top: 50px;
+            margin-left: 50px;
+            position: relative;
+            /* background-color: teal; */
+        }
+        
+        .hair--left {
+            background-color: #fff176;
+            width: 26px;
+            height: 50px;
+            border-top-right-radius: 47%;
+            border-top-left-radius: 47%;
+            position: absolute;
+            top: 18px;
+            left: 200px;
+            transform: rotate(8deg);
+        }
+        .hair--right {
+            background-color: #fff176;
+            width: 26px;
+            height: 45px;
+            border-top-right-radius: 50%;
+            border-top-left-radius: 50%;
+            position: absolute;
+            top: 18px;
+            left: 230px;
+            transform: rotate(22deg);
+        }
+
+        .face {
+            width: 255px;
+            height: 255px;
+            background-color: #fff176;
+            border-top-left-radius: 47%;
+            border-top-right-radius: 47%;
+            border-bottom-left-radius: 30%;
+            border-bottom-right-radius: 30%;
+            position: relative;
+            left: 100px;
+            top: 50px;
+
+        }
+
+        .wing--left {
+            background-color: #fff176;
+            width: 50px;
+            height: 40px;
+            border-top-left-radius: 65%;
+            border-bottom-left-radius: 40%;
+            position: absolute;
+            left: 66px;
+            top: 175px;
+            transform: rotate(-10deg);
+        }
+
+        .wing--right {
+            background-color: #fff176;
+            width: 50px;
+            height: 40px;
+            border-top-right-radius: 65%;
+            border-bottom-right-radius: 40%;
+            position: absolute;
+            left: 335px;
+            top: 175px;
+            transform: rotate(10deg);
+        }
+        
+        .mouth {
+            width:52px;
+            height: 50px;
+            background-color: #ffb74d;
+            border-top-right-radius: 50%;
+            border-top-left-radius: 50%;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            position: absolute;
+            top: 90px;
+            left: 100px;
+        }
+        .mouth__line {
+            width: 52px;
+            height: 4px;
+            background-color: #ff9800;
+            border-radius: 15%;
+            position: relative;
+            top: 25px;
+        }
+        .eye--left {
+            background-color: black;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            position: absolute;
+            left: 62px;
+            top: 80px
+        }
+
+        .eye--right {
+            background-color: black;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            position: absolute;
+            left: 170px;
+            top: 80px;
+        }
+        /* 눈에 하얀거.. 안 넣는 게 더 예쁜듯 */
+        .eye__white--left {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: white;
+            position: absolute;
+            top: 3px;
+        }
+        .eye__white--right {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: white;
+            position: absolute;
+            top: 3px;
+        }
+
+
+        .cheek--left {
+            width: 55px;
+            height: 25px;
+            background-color: #ffabbf;
+            border-radius: 50%;
+            position: absolute;
+            top: 105px;
+            left: 25px;
+            
+        }
+        .cheek--right {
+            width: 55px;
+            height: 25px;
+            background-color: #ffabbf;
+            border-radius: 50%;
+            border-radius: 50%;
+            position: absolute;
+            top: 105px;
+            left: 172px;
+        }
+    </style>
+</head>
+<body>
+    <main class="character">
+        <div class="hair--left"></div>
+        <div class="hair--right"></div>
+        </div>
+        <div class="face">
+            <div class="eye--left"><div class="eye__white--left"></div></div>
+            <div class="eye--right"><div class="eye__white--right"></div></div>
+            <div class="cheek--left"></div>
+            <div class="cheek--right"></div>
+            <div class="mouth">
+                <div class="mouth__line"></div>
+            </div>
+        </div>
+        <div class="wing--left"></div>
+        <div class="wing--right"></div>
+    </main>
+</body>
+</html>

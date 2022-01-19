@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="./126module-style.css">
+    <style>
+        li {
+            list-style: none;
+
+        }
+    </style>
+</head>
+<body>
+    <p>버튼 모듈</p>
+    <li><a href="#none" class="link-sns-login icon-google">구글 계정으로 로그인</a></li>
+    <li><a href="#none" class="link-sns-login icon-naver">네이버 계정으로 로그인</a></li>
+    <li><a href="#none" class="link-sns-login icon-facebook">페이스북 계정으로 로그인</a></li>
+    <li><a href="#none" class="link-sns-login icon-kakao">카카오 계정으로 로그인</a></li>
+
+    <button type="button" class="btn-login">로그인</button>
+    <button type="button" class="btn-close"><img src="./images-login/close.png" alt="로그인 닫기"></button>
+
+    <p>인풋 모듈</p>
+    <fieldset class="module-inp module-inp-id error">
+        <lable for="inpId"class="txt-hide">아이디</lable>
+        <input type="text" class="inp-login" placeholder="아이디" id="inpId">
+        <!-- display:none;으로 해야 sr-reader가 읽지 않는다! 안그러면 눈엔 안 보여도 읽음 -->
+        <strong class="inp-error">아이디를 입력해 주세요.</strong>
+    </fieldset>
+    <fieldset class="module-inp error">
+        <lable for="inpPw"class="txt-hide">비밀번호</lable>
+        <input type="text" class="inp-login" placeholder="비밀번호" id="inpPw">
+        <strong class="inp-error">아이디 혹은 비밀번호와 일치하지 않습니다.</strong>
+    </fieldset>
+        
+</body>
+</html>

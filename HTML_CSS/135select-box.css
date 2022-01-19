@@ -1,0 +1,50 @@
+@charset "utf-8";
+
+*{
+    box-sizing: border-box;
+}
+button {
+    border: none;
+    background: none;
+}
+
+.btn-select {
+    width: 200px;
+    padding: 12px 14px 12px 13px;
+    text-align: left;
+    border:3px solid #F8E4FF;
+    border-radius: 10px;
+    font-size: 14px;
+    line-height: 16px;
+}
+.btn-select::after {
+    /* display: inline-block; */
+    float: right;
+    content: '';
+    width: 12px;
+    height: 8px;
+    background-image: url(./image/Polygon\ 1.png);
+    background-size: 12px 8px;
+}
+.list-member {
+    display: none;
+    width: 200px;
+    font-size: 14px;
+    line-height: 16px;
+    box-shadow: 4px 4px 14px rgba(0,0,0,0.15);
+    border-radius: 10px;
+    margin: 4px 0;
+    padding: 5px 8px;
+}
+/* js로 .on 클래스가 있을 때만 나오도록! */
+.btn-select.on + .list-member {
+    display: block;
+}
+.list-member li {
+    padding: 7px 10px;
+}
+.list-member li:hover {
+    background-color: #F8E4FF;
+    border-radius: 8px;
+}
+/* 버튼 크기가 조그매서 선택이 안 되는 거였음!! */

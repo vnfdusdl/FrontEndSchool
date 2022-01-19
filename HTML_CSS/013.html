@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table tag</title>
+    <style>
+        table, tr, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <!-- table>(tr>th*3)+(tr>td*3)*3 -->
+    <caption> <!--설명을 넣어도 되고 제목을 넣어도 됨-->
+        이 tABLE은 영국에서 최초로 시작되어...
+    </caption>
+    <colgroup>
+        <col class="구분">
+        <col class="이름">
+        <col class="판매량">
+    </colgroup>
+    <table>
+        <thead>
+            <tr>
+                <th>구분</th>
+                <th>책이름</th>
+                <th>책가격</th>
+                <th>책 판매량</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>hello1</td>
+                <td>1,000</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>hello2</td>
+                <td>2,000</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>hello3</td>
+                <td>3,000</td>
+                <td>3</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3">총 판매량</td>
+                <td>6</td>
+            </tr>
+        </tfoot>
+    </table>
+    <table>
+        <caption>Color names and values</caption>
+        <tbody>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">HEX</th>
+            <th scope="col">HSLa</th>
+            <th scope="col">RGBa</th>
+          </tr>
+          <tr>
+            <th scope="row">Teal</th>
+            <td><code>#51F6F6</code></td>
+            <td><code>hsla(180, 90%, 64%, 1)</code></td>
+            <td><code>rgba(81, 246, 246, 1)</code></td>
+          </tr>
+          <tr>
+            <th scope="row">Goldenrod</th>
+            <td><code>#F6BC57</code></td>
+            <td><code>hsla(38, 90%, 65%, 1)</code></td>
+            <td><code>rgba(246, 188, 87, 1)</code></td>
+          </tr>
+        </tbody>
+      </table>
+</body>
+</html>

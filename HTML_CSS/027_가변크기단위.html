@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가변크기단위</title>
+    <style>
+        html, body {
+            font-size: 10px;
+        }
+        p {
+            font-size: 2em  ;
+        }
+        /* em은 부모의 배수 단위 
+        단위가 다 px로 되어있다면 나중에 크기 수정하고 싶을 때 다 수정해야하는데
+        em단위로 해두면 body의 font-size만 바꿔주면 되니까 편하다
+        */
+        div {
+            font-size: 2em;
+        }
+
+        .one {
+            font-size: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <p>Hello World</p>
+    <div>
+        <!--10px*2 = 20px -->
+        <div>
+            <!-- 20px*2=40px -->
+            <div>
+                <!-- 40px*2=80px -->
+                Hello world
+            </div>
+        </div>
+    </div>
+    <div>
+        <div>
+            <div class="one">
+                <!-- html font-size에 2배인 20px -->
+                Hello world
+            </div>
+        </div>
+    </div>
+</body>
+</html>

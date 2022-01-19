@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>smacss 모듈</title>
+    <style>
+
+      
+      /* <!-- 레이아웃 --> */
+      /* <!-- 모듈 --> */
+      /* .button {
+          display: inline-block;
+          width: 200px;
+          padding: 20px 10px;
+          margin: 10px 20px;
+          background-color: blue;
+          color: wheat;
+          text-decoration: none;
+          text-align: center;
+          font-size: 18px;
+      }
+      .button.btn-small{
+          width: 80px;
+          padding: 10px 0;
+          font-size: 13px;
+      }
+      .button.btn-long {
+          width: 160px
+      } */
+      /* <!-- 스테이트 --> */
+      .tabnav {
+          display: flex;
+      }
+      .tabnav li {
+          border-top: 1px solid black;
+          border-right: 1px solid black;
+          border-bottom: 1px solid black;
+      }
+      .tabnav li:first-child {
+          border-left: 1px solid black;
+      }
+      .tabnav li a {
+          display: block;
+          padding: 10px 30px;
+          text-decoration: none;
+      }
+      /*is-acive 같은 게 state */
+      .is-active {
+          background-color: cadetblue;
+      }
+      .is-active a {
+          /* 클릭할 수 없다는 스타일을 표시하는 것 */
+          pointer-events: none;
+          color: crimson;
+      }
+      /* <!-- 테마 --> */
+      .mod {
+          border:1px solid;
+      }
+      /* 이게 테마.. 강사님도 이런 거까지 구분해야할까 싶어서 smacss를 좋아하시지 않느신대 */
+      .mod {
+          border-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <a href="#" class="button btn-small btn-long">아이디/비밀번호 찾기</a
+    ><a href="#" class="button btn-small">로그인</a> -->
+
+    <!-- 스테이트 예시 -->
+    <ul class="tabnav">
+        <li><a href="">탭1</a></li>
+        <li><a href="">탭2</a></li>
+        <li><a href="">탭3</a></li>
+        <li><a href="">탭4</a></li>
+    </ul>
+  </body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./reset.css" />
+    <style>
+      body {
+        box-sizing: border-box;
+        margin: 100px;
+        padding: 0;
+      }
+
+      button {
+        background: none;
+        color: inherit;
+        border: none;
+        padding: 0;
+        font: inherit;
+        cursor: pointer;
+        outline: inherit;
+      }
+
+      h4 {
+        margin: 0;
+        font-size: 18px;
+        color: rgb(75, 75, 75);
+      }
+
+      img {
+        width: 10px;
+        margin-right: 10px;
+      }
+
+      a {
+        color: rgb(100, 100, 100);
+        text-decoration: none;
+        outline: none;
+      }
+
+      .login_wrap {
+        position: relative;
+        background: #f7f9fa;
+        width: 500px;
+        height: 130px;
+        padding: 2rem;
+        border: 1px solid rgba(133, 133, 133, 0.733);
+      }
+
+      .signin {
+        width: 100%;
+        height: 60px;
+        margin: 15px 0;
+        background: #3ac75a;
+        color: #f7f9fa;
+      }
+
+      .naverimg {
+        width: 60px;
+        margin-right: 10px;
+      }
+
+      .left,
+      .right {
+        display: inline-block;
+      }
+
+      .right {
+        float: right;
+      }
+
+      .lock {
+        margin-right: 7px;
+      }
+
+      .lock::after {
+        /* content부분에 요소의 콘텐츠가 들어간다.content에 넣으려면 유니코드를 넣어야한다 */
+        content: "\00b7";
+        display: inline-block;
+        /* 점을 width와 height 말고 content로 구현해보기 */
+        /* width: 5px;
+        height: 5px;
+        background: rgb(182, 182, 182);
+        border-radius: 100%; */
+        margin-left: 10px;
+        /* 추가해준 내용 */
+        vertical-align: top;
+        margin: 5px 0 10 0px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="login_wrap">
+      <h4>Connect with people</h4>
+      <button class="signin">
+        <img class="naverimg" src="./images/title.png" alt="naver logo" />Sign
+        in
+      </button>
+      <div class="left">
+        <a class="lock" href="#"
+          ><img src="./images/lock.png" alt="lock" />Forgot Username</a
+        >
+        <a href="#">Password</a>
+      </div>
+      <div class="right">
+        <a href="#"><img src="./images/user.png" alt="user" />Sign up</a>
+      </div>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>card</title>
+    <style>
+      /* index html */
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+      }
+
+      .cont-card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        perspective: 800px;
+      }
+
+      .item-card {
+        /* 실습용 rotateY(720deg);, rotateX(720deg);, rotateZ(720deg) */
+        transform: scale(0.1) rotateX(720deg);
+        width: 500px;
+        height: 500px;
+        background-color: #f2994a;
+        transition: all 2s;
+      }
+
+      .item-card:hover {
+        width: 500px;
+        height: 500px;
+        background-color: palevioletred;
+        transform: scale(1) rotateY(0deg);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 문제점: 앞뒷면이 같다. 그래서 앞뒷면 둘 다에서 hello world가 보인다 -->
+    <!-- div로 묶고 그걸 돌려야하나? 하나 더 붙여줘야한다는데 카드를 하나 더 붙여햐한대. -->
+    <div class="cont-card">
+      <div class="item-card"><h1>hello world</h1></div>
+    </div>
+  </body>
+</html>

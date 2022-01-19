@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>float</title>
+    <style>
+        .header {
+            width: 900px;
+            height: 100px;
+            background: royalblue;
+        }
+
+        .main {
+            /* overflow: hidden; */
+            height: 200px;
+            /* 요소의 높이값은, 부모가 되는 요소의 높이 값은 지정해주지 않는 게 좋다.
+            자식의 숫자, 자식의 높이가 변할 수 있기 때문이다. */
+        }
+
+        .main div {
+            width: 33.33%;
+        }
+        
+        .main div:first-child {
+            float: left;
+            /* width: 300px; */
+            height: 200px;
+            background: saddlebrown;
+        }
+        
+        .main div:nth-child(2) {
+            float: left;
+            /* width: 300px; */
+            height: 200px;
+            background: seagreen;
+        }
+        
+        .main div:last-child {
+            float: left;
+            /* width: 300px; */
+            height: 200px;
+            background: silver;
+        }
+        
+        .footer {
+            width: 900px;
+            height: 100px;
+            background: slateblue;
+        }
+        
+
+        </style>
+</head>
+
+<body>
+    <div class="header"></div>
+    <div class="main">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="footer"></div>
+</body>
+
+</html>

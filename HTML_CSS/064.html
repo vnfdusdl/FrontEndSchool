@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            /* margin: 20px; */
+            background-color: pink;
+        }
+        .second {
+            background-color: black;
+            /* position relative는 normal flow의 흐름을 해치치 않는다 */
+            /* position: relative;  */
+            /* position:absolute는 박스가 겹쳐진다. 아래있는 핑크 박스가 올라온다. 검은 박스가 absolute가 되면서 normal flow에서 벗어나기 때문. */
+            position: absolute;
+            /* top: 200px; */
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <div class="second"></div>
+    <div></div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+h2 {
+    margin: 30px;
+}
+.cont-select {
+    position: relative;
+    width: 200px;
+}
+.btn-select {
+    width: 100%;
+    /* ellipsis 됐을 때 겹치지 않으려고  */
+    padding: 13px 20px 13px 14px;
+    font-size: 12px;
+    line-height: 14px;
+    background-color: #fff;
+    border: 1px solid #c4c4c4;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: left;
+
+    /* 말줄임 속성 */
+    /* 공백을 만났을 때 어떻게 해줄건지 결정하는 속성 */
+    white-space: nowrap;
+    /* text가 넘어갔을 때 */
+    text-overflow: ellipsis;
+    overflow: hidden;
+    /* background에서도 positoin 이동이 가능하다  */
+    background: url(./image/icon-Triangle-down.png) no-repeat center right 14px;
+}
+.btn-select:hover, .btn-select:focus {
+    border:1px solid #9B51E0;
+    outline:3px solid #f8e4ff;
+}
+.list-member {
+    display: none;
+    position: absolute;
+    width: 100%;
+    top: 49px;
+    left: 0;
+    border: 1px solid #c4c4c4;
+    border-radius: 10px;
+}
+.btn-select.on + .list-member {
+    display: block;
+}
+.btn-select.on {
+    background: url(./image/Polygon\ 1.png) no-repeat center right 14px;
+}
+
+.list-member li {
+    /* 안에 텍스트가 늘어났을 때, 높이값이 변하게 하는 게아니라 말줄임이 될 거라고 생각하는 거 */
+    height: 40px;
+    padding: 5px 8px;
+    box-sizing: border-box;
+}
+.list-member li button {
+    width: 100%;
+    padding: 7px 10px;
+    border: none;
+    background-color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: left;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.list-member li button:hover,
+.list-member li button:focus {
+    background-color: #f8e4ff;
+}

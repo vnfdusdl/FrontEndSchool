@@ -1,0 +1,99 @@
+<!-- 조아라 님 코드 -->
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Naver login</title>
+    <style>
+      .container {
+        padding: 16px 16px 12px 17px;
+        background-color: #f7f9fa;
+        border: 1px solid #dae1e6;
+        overflow: hidden;
+      }
+      p {
+        font-size: 12px;
+        color: #808080;
+      }
+      .button {
+        padding: 15px 0;
+        margin-top: 11px;
+        margin-bottom: 13px;
+        background-color: #19ce60;
+        border: 1px solid #15c654;
+        border-radius: 2px;
+        font-size: 13px;
+        color: #fff;
+        font-weight: 700;
+        text-align: center;
+      }
+      .find {
+        float: left;
+      }
+      /* find에 첫번째 가상요소를 주기 위해 before 사용 */
+      .find::before {
+        content: "";
+        /* display: inline-block; */
+        width: 10px;
+        height: 10px;
+        /* background-image로 설정하는 법 */
+        background-image: url(image/lock.png);
+        /* 이미지의 가로세로 길이 중 짧은 길이를 기준으로 하여서 이미지를 다 보이게 해줌 */
+        background-size: contain;
+        /* 이미지 중복 방지 */
+        background-repeat: no-repeat;
+        float: left;
+        /* float값을 주면 block 요소처럼 되니까?, display: inline-block을 줄 필요가 없다.(가상요소는 inline  요소라서 width 등을 가지려면 block 처리 해줘야함) */
+        margin: 3px 5px 0 0;
+      }
+      .signup {
+        float: right;
+      }
+      .img1 {
+        height: 14px;
+        margin-right: 5px;
+        /* 추가된!! float에서 세로 정렬 맞출 땐 verticla-align이랑 margin값을 이용*/
+        vertical-align: top;
+        margin-top: 1px;
+      }
+      .img2 {
+        float: left;
+        width: 10px;
+        margin: 1px 5px 0px 0px;
+      }
+      .img3 {
+        float: left;
+        width: 10px;
+        margin: 4px 5px 0 0;
+      }
+      .text {
+        float: left;
+        font-size: 12px;
+        color: #505050;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="container">
+      <p>네이버를 더 안전하고 편리하게 이용하세요</p>
+      <!-- button이나 a로 감싸주기 -->
+      <article class="button">
+        <img class="img1" src="image/title.png" />
+        로그인
+      </article>
+      <article class="find">
+        <!-- alt속성이 필요하지만, 값이 들어갈 필요는 없다 정보가 중복돼서 필요없다 비워둔 이유는, 스크린리더가 굳이 설명할 필요가 없다는 요소로 인식하고 다음 태그로 넘어감. 그런데 alt값이 없을 경우, src 경로 값을 읽어버린다. -->
+        <!-- <img class="img2" src="image/lock.png" alt="" /> -->
+        <!-- a 태그로 -->
+        <div class="text">아이디 · 비밀번호찾기</div>
+      </article>
+      <article class="signup">
+        <img class="img3" src="image/user.png" />
+        <!-- a 태그로 -->
+        <div class="text">회원가입</div>
+      </article>
+    </section>
+  </body>
+</html>

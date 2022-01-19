@@ -1,0 +1,190 @@
+@charset "utf-8";
+/* base */
+@font-face {
+    font-family: Spoqa Han Sans Neo;
+    src: url("./SpoqaHanSansNeo_TTF_original/SpoqaHanSansNeo_TTF_original/SpoqaHanSansNeo-Regular.ttf") format("woff");
+    font-weight: 400;
+}
+@font-face {
+    font-family: Spoqa Han Sans Neo;
+    src: url("./SpoqaHanSansNeo_TTF_original/SpoqaHanSansNeo_TTF_original/SpoqaHanSansNeo-Medium.woff") format("woff");
+    font-weight: 500;
+}
+@font-face {
+    font-family: Spoqa Han Sans Neo;
+    src: url("./SpoqaHanSansNeo_TTF_original/SpoqaHanSansNeo_TTF_original/SpoqaHanSansNeo-Bold.woff") format("woff");
+    font-weight: 700;
+}
+body {
+    /* 띄어쓰기 되어있는 건 ""로 감싸고,, 아닌 건 그냥 써주면 된다.  */
+    font-family: "Spoqa Han Sans Neo", sans-serif;
+}
+#appLogin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+}
+.cont-login {
+    width: 440px;
+    padding:38px 30px 30px;
+    border: 1px solid #C4C4C4;
+    border-radius: 5px;
+    text-align: center;
+}
+.cont-login .tit-weniv img {
+    width: 122px;
+	vertical-align: top;
+}
+.cont-login .txt-login {
+    margin: 32px 0 36px;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+/* 모달 스타일 */
+
+.modal-login {
+    display: none;
+    height: 100%;
+}
+/* on은 js로 조절해줄 것 */
+.modal-login.on {
+    display: block;
+}
+
+/* 모달이 떴을 때 뒤에 어둡게 변하는 거 가상요소로 만들 것. */
+.modal-login::after {
+    display: block;
+    content: '';
+    position: fixed;
+    top:0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: black;
+    opacity: 0.7;
+    /* 뒤에 요소가 눌리지 않도록!! */
+    z-index: 10;
+}
+.modal-login .cont-form-login {
+    width: 100%;
+    /* 그냥 width를 주지 않은 이유느 flexible하게 만들기 위해서 화면 작아지면 더 작아질것 */
+    max-width: 520px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) ;
+    background-color: #fff;
+    /* 배경보다 더 앞으로 나오도록! */
+    z-index: 20;
+    border: 1px solid #C4C4C4;
+    border-radius: 10px;
+}
+
+.cont-form-login .tit-form {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    padding: 20px 0 18px;
+    text-align: center;
+    border-bottom: 1px solid #C4C4C4;
+}
+.cont-form-login .txt-form {
+    margin: 26px 0 24px;
+    padding-left: 24px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+}
+.cont-form-login .form-login {
+    padding: 0 24px 0;
+    text-align: center;
+}
+.form-login .label-hold {
+    display: block;
+    text-align: left;
+    margin: 17px 0 21px;
+    cursor: pointer;
+}
+.form-login .inp-error{
+    text-align: left;
+}
+.form-login .label-hold::before {
+    display: inline-block;
+    content: '';
+    width: 22px;
+    height: 22px;
+    background-image: url(./images-login/icon_check_empty.png);
+    vertical-align: -5px;
+    margin-right: 8px;
+}
+/* 접근성 -인식의 용이성을 주기 위함! */
+/* input을 숨겼기때문에, label에 focus를 줘야함 */
+.form-login .inp-hold:focus + .label-hold::before {
+    outline: 2px solid black;
+    /* 요소와 border까지의 거리를 설정 */
+    /* outline-offset: 5px; */
+    border-radius: 50%;
+}
+
+.form-login .inp-hold:checked + .label-hold::before {
+    background-image: url(./images-login/icon_check.png);
+}
+.form-login a[class^="link"] {
+    display: inline-block;
+    margin-top: 20px;
+    line-height: 18px;
+    font-size: 14px;
+    color: #767676;
+    text-decoration: none;
+}
+.form-login .link-signup::after {
+    display: inline-block;
+    content: '\007c';
+    margin: 0 12px;
+}
+.cont-form-login .btn-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    /* width: 80px; */
+    padding: 22px 30px;
+    box-sizing: border-box ;
+    background-color: transparent;
+}
+
+.cont-form-login .cont-sns-login {
+    margin-top: 30px;
+    padding: 30px 24px 25px;
+    position: relative;
+}
+/* 또는 부분이 의미가 없다고 생각하셔서 html로 쓰지 않고, 가상요소로 만들어주었다. */
+.cont-sns-login::before {
+    content: '또는';
+    display: block;
+    width: 52px;
+    height: 18px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    z-index: 10;
+    text-align: center;
+}
+.cont-sns-login::after {
+    display: block;
+    content: '';
+    /* 100%에서 부모의 padding값만큼 뺀 너비로 적용하려고 calc 사용!! */
+    width: calc(100% - 48px);
+    height: 1px;
+    position: absolute;
+    top: 9px;
+    background-color: #C4C4C4;
+}
+
+/* 앞에 li가 있을 경우만 margin-top을 주기 위함 */
+.cont-sns-login .list-sns li+li {
+    margin-top: 10px;
+}
