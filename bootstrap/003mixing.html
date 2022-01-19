@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bootstrap- mixing해서 사용했을 경우</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .b {
+            border: 1px solid black; 
+        }
+    </style>
+</head>
+<body>
+    <!-- 주제가 변할 때 하나의 container로 잡아줌 전세계 공통 사항 -->
+    <div class="container">
+        <div class="row">
+            <!-- 4개 영역을 차지하는 coulmn이 3개 만들어짐 -->
+            <!-- 하나의 row에 column의 총 개수가 12개가 넘으면 밑으로 떨어짐 -->
+            <div class="col-md-4 col-sm-6 b">hello world</div>
+            <div class="col-md-4 col-sm-6 b">hello world</div>
+            <div class="col-md-4 col-sm-4 b">hello world</div>
+            <div class="col-md-4 col-sm-4 b">hello world</div>
+            <div class="col-md-4 col-sm-4 b">hello world</div>
+            <div class="col-md-4 col-sm-12 b">hello world</div>
+        </div>
+        <!-- 레이아웃이나 디자인이 바뀌면 다른 row로 바꿔줌 -->
+        <div class="row">
+            <div class="col-md-3 b">hello world</div>
+            <div class="col-md-3 b">hello world</div>
+            <div class="col-md-3 b">hello world</div>
+            <div class="col-md-3 b">hello world</div>
+        </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
