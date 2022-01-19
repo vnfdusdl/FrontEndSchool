@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        console.log(add(10,20)); //실행될까요? -> 됨. fucntino으로 선언된 건 호이스팅 되어서 올라간다.
+        function add(x,y) {
+            return x+y;
+        }// 30
+        
+        
+        console.log(mul(10,20)); // 함수 밑으로 내리면 실행됨. 
+        let mul = function (a, b) { // mul만 호이스팅 되어서 올라가고 function 은 올라가지 않음
+            return a* b;
+        } //ReferenceError: Cannot access 'mul' before initialization
+    </script>
+</body>
+</html>

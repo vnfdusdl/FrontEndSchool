@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title></title>
+    </head>
+    <body>
+        <script>
+            // 코드 출처 : https://developer.mozilla.org/ko/docs/Learn/JavaScript/Objects/JSON#json_%EA%B0%80%EC%A0%B8%EC%98%A4%EA%B8%B0
+            var requestURL = 'https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json';
+
+            var request = new XMLHttpRequest();
+            request.open('GET', requestURL);
+            request.responseType = 'json';
+            request.send();
+
+            request.onload = function() {
+            var superHeroes = request.response;
+            console.log(superHeroes);
+            }
+        </script>
+    </body>
+</html>

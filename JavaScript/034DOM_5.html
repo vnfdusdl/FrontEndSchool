@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title></title>
+        <style>
+            p {
+                margin: 100px;
+            }
+        </style>
+    </head>
+    <body>
+        <p></p>
+        <input type="text" />
+        <button>Write Something!</button>
+
+        <script>
+            const myBtn = document.querySelector('button');
+            const myP = document.querySelector('p');
+            const myInput = document.querySelector('input');
+
+            // myBtn.addEventListener('click', function () {
+            //     //input요소의 값(value)를 불러와주는 .value
+            //     myP.textContent = myInput.value;
+            //     console.log(myP.textContent);
+            // });
+
+            //input 요소에 'input' 이벤트를 연결하면 실시간으로 값이 반영되게 만들 수도 있습니다.
+            myInput.addEventListener('input', () => {
+                myP.textContent = myInput.value;
+            });
+
+            // myP.textContent = "<strong>I'm Strong!!</strong>";
+            
+            // innerHTML은 태그를 캐치해서 요소가 들어간다
+            // myP.innerHTML = "<strong>I'm Strong!!</strong>";
+            //text만 넣어줄 때는 innerHTML 사용하지말기 훨신 빠름
+            // myP.innerHTML = "I'm Strong!!";
+            //클래스도 넣을 수 있음
+            // myP.innerHTML = "<strong class='txt-strong'> I'm Strong!! </strong>";
+
+            // myP.innerText = "I'm Strong!!";
+            myP.innerText = "<strong>I'm Strong!!</strong>";
+            // myP.outerHTML = '<div></div>';
+        </script>
+    </body>
+</html>
